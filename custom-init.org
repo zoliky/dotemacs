@@ -882,6 +882,7 @@ Dependencies:
     (mu4e-hide-index-messages t)
     (mu4e-attachment-dir "~/Downloads")
     (mu4e-compose-dont-reply-to-self t)
+    (mu4e-change-filenames-when-moving t)
     (mu4e-sent-messages-behavior 'delete)
     (mu4e-index-update-error-warning nil)
     (mu4e-html2text-command "w3m -dump -I utf-8 -O utf-8 -T text/html")
