@@ -936,12 +936,12 @@ Dependencies:
                     (smtpmail-queue-dir . "~/Maildir/zoliky-gmail/queue/cur")
                     (smtpmail-smtp-user . "zoliky")
                     (mu4e-maildir-shortcuts
-                     . (("/zoliky-gmail/INBOX"              . ?i)
-                        ("/zoliky-gmail/[zoliky].Sent Mail" . ?s)
-                        ("/zoliky-gmail/[zoliky].Trash"     . ?t)
-                        ("/zoliky-gmail/[zoliky].All Mail"  . ?a)
-                        ("/zoliky-gmail/[zoliky].Starred"   . ?r)
-                        ("/zoliky-gmail/[zoliky].Drafts"    . ?d)))))
+                     . ((:maildir "/zoliky-gmail/INBOX"              :key ?i)
+                        (:maildir "/zoliky-gmail/[zoliky].Sent Mail" :key ?s)
+                        (:maildir "/zoliky-gmail/[zoliky].Trash"     :key ?t)
+                        (:maildir "/zoliky-gmail/[zoliky].All Mail"  :key ?a)
+                        (:maildir "/zoliky-gmail/[zoliky].Starred"   :key ?r)
+                        (:maildir "/zoliky-gmail/[zoliky].Drafts"    :key ?d)))))
            (make-mu4e-context
             ;; Work context
             :name "work"
@@ -958,12 +958,12 @@ Dependencies:
                     (smtpmail-queue-dir . "~/Maildir/zolikydev-gmail/queue/cur")
                     (smtpmail-smtp-user . "zolikydev")
                     (mu4e-maildir-shortcuts
-                     . (("/zolikydev-gmail/INBOX"                 . ?i)
-                        ("/zolikydev-gmail/[zolikydev].Sent Mail" . ?s)
-                        ("/zolikydev-gmail/[zolikydev].Trash"     . ?t)
-                        ("/zolikydev-gmail/[zolikydev].All Mail"  . ?a)
-                        ("/zolikydev-gmail/[zolikydev].Starred"   . ?r)
-                        ("/zolikydev-gmail/[zolikydev].Drafts"    . ?d))))))))
+                     . ((:maildir "/zolikydev-gmail/INBOX"                 :key ?i)
+                        (:maildir "/zolikydev-gmail/[zolikydev].Sent Mail" :key ?s)
+                        (:maildir "/zolikydev-gmail/[zolikydev].Trash"     :key ?t)
+                        (:maildir "/zolikydev-gmail/[zolikydev].All Mail"  :key ?a)
+                        (:maildir "/zolikydev-gmail/[zolikydev].Starred"   :key ?r)
+                        (:maildir "/zolikydev-gmail/[zolikydev].Drafts"    :key ?d))))))))
 
   ;; Load mu4e in the background when Emacs starts
   (run-at-time
