@@ -912,6 +912,12 @@ Dependencies:
     (smtpmail-auth-credentials "~/.authinfo.gpg")
     (smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))))
 
+  (use-package org-mime
+    :config
+    (setq org-mime-export-options '(:section-numbers nil
+                                    :with-author nil
+                                    :with-toc nil)))
+
   (use-package mu4e-context
     :ensure nil
     :custom
