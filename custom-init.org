@@ -1041,13 +1041,7 @@ Dependencies:
     :custom
     (elfeed-db-directory "~/.emacs.d/elfeed/")
     :config
-    (setq shr-width 80)
-    ;; Star and unstar feeds
-    (defalias 'elfeed-toggle-starred
-      (elfeed-expose #'elfeed-search-toggle-all 'starred))
-    (defface elfeed-search-starred-title-face
-      '((t :foreground "#d3869b")) "Highlight starred feeds")
-    (push '(starred elfeed-search-starred-title-face) elfeed-search-face-alist))
+    (setq shr-width 80))
 
   (use-package elfeed-search
     :ensure nil
@@ -1058,7 +1052,21 @@ Dependencies:
     (elfeed-search-date-face ((t (:foreground "#83a598" :underline nil))))
     (elfeed-search-feed-face ((t (:foreground "#83a598"))))
     (elfeed-search-tag-face  ((t (:foreground "#928374"))))
-    (elfeed-search-unread-title-face ((t (:foreground "#ebdbb2" :weight bold)))))
+    (elfeed-search-unread-title-face ((t (:foreground "#ebdbb2" :weight bold))))
+    :config
+    ;; Star and unstar feeds
+    (defalias 'elfeed-toggle-starred
+      (elfeed-expose #'elfeed-search-toggle-all 'starred))
+    ;; Custom tag faces
+    (defface elfeed-search-starred-title-face
+      '((t :foreground "#d3869b")) "Highlight starred feeds")
+    (push '(starred elfeed-search-starred-title-face) elfeed-search-face-alist)
+    (defface elfeed-search-podcast-title-face
+      '((t :foreground "#689d6a")) "Highlight podcast entries")
+    (push '(podcast elfeed-search-podcast-title-face) elfeed-search-face-alist)
+    (defface elfeed-search-youtube-title-face
+      '((t :foreground "#fabd2f")) "Highlight youtube entries")
+    (push '(youtube elfeed-search-youtube-title-face) elfeed-search-face-alist))
 
   (use-package elfeed-org
     :after elfeed
