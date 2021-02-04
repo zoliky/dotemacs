@@ -1146,6 +1146,22 @@ When splitting a window, switch to the new window.
   (global-set-key (kbd "C-x 3") 'king/split-window-right-and-switch)
 #+end_src
 
+Mark deleted e-mail messages as read.
+
+#+begin_src emacs-lisp
+  (defun king/mu4e-mark-gmail-trash-as-read (&optional _)
+    (let* ((cmd "mu find maildir:/trash/ flag:unread --format=sexp 2>/dev/null")
+           (res (concat "(list" (shell-command-to-string cmd) ")"))
+           (msgs (car (read-from-string res))))
+      (unless (equal '(list) msgs)
+        (dolist (msg msgs)
+          (when-let ((docid (mu4e-message-field msg :docid)))
+            (unless (= docid 0)
+              (mu4e~proc-move docid nil "+S-u-N")))))))
+
+  (advice-add 'mu4e :before #'king/mu4e-mark-gmail-trash-as-read)
+#+end_src
+
 Resize large images in e-mail messages to fit the window.
 
 #+begin_src emacs-lisp
