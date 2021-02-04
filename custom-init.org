@@ -984,7 +984,9 @@ Desktop notifications and mode line display for mu4e.
 #+begin_src emacs-lisp
   (use-package mu4e-alert
     :hook ((after-init . mu4e-alert-enable-mode-line-display))
-          ;(after-init . mu4e-alert-enable-notifications))
+    :custom
+    ;; Notify only of unread emails in the inbox
+    (mu4e-alert-interesting-mail-query "flag:unread maildir:/INBOX/")
     :config
     (mu4e-alert-set-default-style 'libnotify))
 #+end_src
