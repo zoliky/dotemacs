@@ -68,6 +68,7 @@ Emacs is an extensible computing environment that I use mainly for its text edit
     - [[#mu4e][Mu4e]]
     - [[#mu4e-alert][Mu4e alert]]
   - [[#elfeed][Elfeed]]
+  - [[#emms][Emms]]
 - [[#custom-key-bindings][Custom key bindings]]
 - [[#custom-functions][Custom functions]]
 - [[#custom-input-methods][Custom input methods]]
@@ -1074,6 +1075,50 @@ Dependencies:
     (elfeed-org)
     :custom
     (rmh-elfeed-org-files '("~/orgfiles/elfeed.org")))
+#+end_src
+
+** Emms
+
+Emms (Emacs Multimedia System) is an interactive media browser and music player for Emacs.
+
+Dependencies:
+
+- ~pip install tinytag~
+- ~sudo dnf install mpv~
+
+#+begin_src emacs-lisp
+  (use-package emms
+    :bind (("C-c p"  . emms)
+           ("C-c P"  . emms-browser)
+           ("<C-f1>" . emms-show)
+           ("<C-f2>" . emms-volume-lower)
+           ("<C-f3>" . emms-volume-raise)
+           ("<C-f5>" . emms-previous)
+           ("<C-f6>" . emms-next)
+           ("<C-f7>" . emms-pause)
+           ("<C-f8>" . emms-stop)
+           :map emms-playlist-mode-map
+           ("p" . previous-line)
+           ("n" . next-line))
+    :custom
+    (emms-info-asynchronously t)
+    (emms-volume-amixer-card 1)
+    (emms-volume-amixer-control "PCM")
+    (emms-playlist-buffer-name "*Music*")
+    (emms-player-list '(emms-player-mpv))
+    (emms-info-functions '(emms-info-tinytag))
+    (emms-source-file-default-directory "/run/media/zoliky/Lara/Music")
+    (emms-source-file-directory-tree-function
+     'emms-source-file-directory-tree-find)
+    :config
+    (require 'emms-setup)
+    (require 'emms-history)
+    (require 'emms-volume)
+    (require 'emms-volume-amixer)
+    (require 'emms-mode-line)
+    (emms-all)
+    (emms-history-load)
+    (emms-mode-line nil))
 #+end_src
 
 * Custom key bindings
