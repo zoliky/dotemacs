@@ -39,7 +39,6 @@ Emacs is an extensible computing environment that I use mainly for its text edit
     - [[#lsp][LSP]]
     - [[#magit][Magit]]
     - [[#move-text][Move text]]
-    - [[#nov][Nov]]
     - [[#olivetti][Olivetti]]
     - [[#projectile][Projectile]]
     - [[#rainbow-delimiters][Rainbow delimiters]]
@@ -56,7 +55,6 @@ Emacs is an extensible computing environment that I use mainly for its text edit
     - [[#html][HTML]]
     - [[#javascript][JavaScript]]
     - [[#json][JSON]]
-    - [[#lua][Lua]]
     - [[#markdown][Markdown]]
     - [[#php][PHP]]
     - [[#rust][Rust]]
@@ -80,7 +78,6 @@ Emacs is an extensible computing environment that I use mainly for its text edit
   - [[#cliplink][Cliplink]]
   - [[#contacts][Contacts]]
   - [[#crypt][Crypt]]
-  - [[#drill][Drill]]
   - [[#export][Export]]
   - [[#indentation][Indentation]]
   - [[#ql][QL]]
@@ -585,23 +582,6 @@ A package to move current line or region.
     (move-text-default-bindings))
 #+end_src
 
-*** Nov
-
-A feature-rich EPUB reading mode for Emacs.
-
-#+begin_src emacs-lisp
-  (use-package nov
-    :mode ("\\.epub\\'" . nov-mode)
-    :preface
-    (defun king/nov-font-setup ()
-      (face-remap-add-relative 'variable-pitch
-                               :family "Liberation Serif"
-                               :height 220))
-    :hook (nov-mode . king/nov-font-setup)
-    :custom
-    (nov-text-width t))
-#+end_src
-
 *** Olivetti
 
 Olivetti is a package designed to create a distraction-free writing environment.
@@ -767,15 +747,6 @@ Major mode for editing JSON files.
       (when (eq major-mode 'json-mode)
         (json-pretty-print-buffer)))
     :hook (before-save . king/json-mode-before-save-hook))
-#+end_src
-
-*** Lua
-
-Major mode for editing Lua files.
-
-#+begin_src emacs-lisp
-  (use-package lua-mode
-    :mode "\\.lua\\'")
 #+end_src
 
 *** Markdown
@@ -1299,7 +1270,6 @@ Org mode is a a to-do, agenda, project planner, literate programming, note-takin
     (org-startup-with-inline-images t)
     (org-modules '(org-crypt org-habit))
     (org-tag-alist '(("crypt"    . ?c)
-                     ("drill"    . ?d)
                      ("temp"     . ?t)
                      ("home"     . ?h)
                      ("work"     . ?w)
@@ -1525,17 +1495,6 @@ Encrypt and decrypt entries in Org mode.
     (org-crypt-key "182BC820D271E36BE128AD05D1F775A0A21D3351")
     :config
     (org-crypt-use-before-save-magic))
-#+end_src
-
-** Drill
-
-A flashcards and spaced repetition system for Org mode.
-
-#+begin_src emacs-lisp
-  (use-package org-drill
-    :after org
-    :custom
-    (org-drill-spaced-repetition-algorithm 'sm5))
 #+end_src
 
 ** Export
