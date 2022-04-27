@@ -211,7 +211,7 @@ Fonts and text size.
 
   ;; International Phonetic Alphabet
   (set-fontset-font t 'phonetic (font-spec :family "DejaVu Sans Mono"))
-  (dolist (char (string-to-list "æθðŋˈˌ"))
+  (dolist (char (string-to-list "æθðŋʷʸˈˌ"))
     (set-fontset-font nil char (font-spec :family "DejaVu Sans Mono")))
 #+end_src
 
@@ -589,7 +589,6 @@ Olivetti is a package designed to create a distraction-free writing environment.
 #+begin_src emacs-lisp
   (use-package olivetti
     :hook ((org-mode          . olivetti-mode)
-           (nov-mode          . olivetti-mode)
            (mu4e-view-mode    . olivetti-mode)
            (elfeed-show-mode  . olivetti-mode)
            (mu4e-compose-mode . olivetti-mode))
@@ -1219,20 +1218,38 @@ Input methods provide convenient ways of entering non-ASCII characters from the 
    ("\\tH" ?ð) ; VOICED DENTAL FRICATIVE
    ("\\sh" ?ʃ) ; VOICELESS POSTALVEOLAR FRICATIVE
    ("\\zs" ?ʒ) ; VOICED POSTALVEOLAR FRICATIVE
+   ("\\be" ?β) ; VOICED BILABIAL FRICATIVE
+   ("\\vv" ?ɣ) ; VOICED VELAR FRICATIVE
+   ("\\hh" ?ɥ) ; VOICED LABIAL-PALATAL APPROXIMANT
+   ("\\la" ?ʎ) ; VOICED PALATAL LATERAL APPROXIMANT
+   ("\\jj" ?ʝ) ; VOICED PALATAL FRICATIVE
+   ("\\mm" ?ɱ) ; VOICED LABIODENTAL NASAL
    ("\\ts" ?ʧ) ; VOICELESS POSTALVEOLAR AFFRICATE
    ("\\dz" ?ʤ) ; VOICED POSTALVEOLAR AFFRICATE
+   ("\\ny" ?ɲ) ; VOICED PALATAL NASAL
    ("\\ng" ?ŋ) ; VOICED VELAR NASAL
+   ("\\rr" ?ɹ) ; VOICED ALVEOLAR APPROXIMANT
+   ("\\ta" ?ɾ) ; VOICED ALVEOLAR TAP
+   ("\\ir" ?ʁ) ; VOICED UVULAR FRICATIVE
+   ("\\dl" ?ɫ) ; VELARIZED ALVEOLAR LATERAL APPROXIMANT
    ("\\as" ?ʰ) ; ASPIRATED
    ("\\ps" ?ˈ) ; PRIMARY STRESS
    ("\\ss" ?ˌ) ; SECONDARY STRESS
-   ("\\li" ?‿) ; LINKING
+   ("\\li" ?‿) ; LIAISON
+   ("\\ri" ?↗) ; RISING INFLECTION
+   ("\\fi" ?↘) ; FALLING INFLECTION
+   ("\\lw" ?ʷ) ; LABIAL HIGH ROUNDED
+   ("\\ly" ?ʸ) ; PALATAL HIGH UNROUNDED
 
    ;; Common symbols
    ("\\copy"   ?©)  ; COPYRIGHT
    ("\\tm"     ?™)  ; TRADEMARK
+   ("\\mdot"   ?·)  ; INTERPUNCT
    ("\\ha"     ?á)  ; A-ACUTE
    ("\\endash" ?–)  ; EN DASH
    ("\\emdash" ?—)  ; EM DASH
+   ("\\female" ?♀)  ; FEMALE
+   ("\\male"   ?♂)  ; MALE
    ("\\eur"    ?€)) ; EURO
 #+end_src
 
