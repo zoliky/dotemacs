@@ -1530,49 +1530,14 @@ Dependencies:
     :after org
     :custom
     (org-latex-compiler "xelatex")
-    (org-latex-title-command
-     (concat
-      "\\begin{center}\n"
-      "\\vskip 2em\n"
-      "{\\Huge\\bfseries{%t} \\par}\n"
-      "\\vskip 2em\n"
-      "{\\large %a}\n"
-      "\\normalsize\\@date"
-      "\\end{center}\n"))
     :config
     (add-to-list
      'org-latex-classes
-     '("article"
-       "\\documentclass[11pt,a4paper]{article}
-        \\usepackage[utf8]{inputenc}
-        \\usepackage{fontspec}
-        \\setmainfont{Charis SIL}
-        \\setmonofont{DejaVu Sans Mono}
-
-        \\usepackage{geometry}
-        \\geometry{a4paper, left=1in, right=1in, top=0.5in, bottom=0.65in}
-
-        \\setlength{\\parindent}{0pt}
-        \\setlength{\\parskip}{1em}
-        \\setcounter{secnumdepth}{5}
-        \\setcounter{tocdepth}{4}
-
-        \\usepackage{titlesec}
-        \\titleformat{\\section}
-          {\\normalfont\\huge\\bfseries}{\\thesection}{1em}{}
-        \\titleformat{\\subsection}
-          {\\normalfont\\Large\\bfseries}{\\thesubsection}{1em}{}
-        \\titleformat{\\subsubsection}
-          {\\normalfont\\large\\bfseries}{\\thesubsubsection}{1em}{}
-        \\titleformat{\\paragraph}
-          {\\normalfont\\normalsize\\bfseries}{\\theparagraph}{1em}{}
-        \\titlespacing*{\\paragraph}
-          {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
-        \\titleformat{\\subparagraph}
-          {\\normalfont\\normalsize\\bfseries}{\\thesubparagraph}{1em}{}
-        \\titlespacing*{\\subparagraph}
-          {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
-        \\renewcommand{\\baselinestretch}{1.5}"
+     '("org-plain-latex"
+       "\\documentclass{article}
+       [NO-DEFAULT-PACKAGES]
+       [PACKAGES]
+       [EXTRA]"
        ("\\section{%s}"       . "\\section*{%s}")
        ("\\subsection{%s}"    . "\\subsection*{%s}")
        ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
