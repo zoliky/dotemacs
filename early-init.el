@@ -10,6 +10,9 @@
 
 ;;; Code:
 
+;; Maximize the Emacs frame on startup
+(push '(fullscreen . maximized) default-frame-alist)
+
 ;; Avoid loading the packages again after processing the init file
 (setq package-enable-at-startup nil)
 
