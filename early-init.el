@@ -1,11 +1,11 @@
-;;; early-init.el --- Emacs 27+ pre-initialization file
+;;; early-init.el --- Early initialization file -*- lexical-binding: t; -*-
 
 ;; Author: Zoltán Király <zoliky@gmail.com>
 ;; Created: November 10, 2020
 
 ;;; Commentary:
 
-;; Emacs 27+ loads this file before the package system and GUI is initialized
+;; This file is loaded before the package system and GUI is initialized
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Early-Init-File.html
 
 ;;; Code:
