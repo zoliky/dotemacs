@@ -1,4 +1,4 @@
-;;; init.el --- Emacs configuration file
+;;; init.el --- Initialization file -*- lexical-binding: t; -*-
 
 ;; Author: Zoltán Király <zoliky@gmail.com>
 ;; Created: November 10, 2020
