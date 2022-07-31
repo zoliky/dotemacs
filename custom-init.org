@@ -475,8 +475,7 @@ Ibuffer is a built-in replacement for ~list-buffers~.
 
   (use-package all-the-icons-ibuffer
     :after (all-the-icons ibuffer)
-    :init
-    (all-the-icons-ibuffer-mode))
+    :hook (ibuffer-mode . all-the-icons-ibuffer-mode))
 #+end_src
 
 *** Icons
