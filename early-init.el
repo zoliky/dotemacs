@@ -21,7 +21,10 @@
 (push '(tool-bar-lines . 0)   default-frame-alist)
 (push '(vertical-scroll-bars) default-frame-alist)
 
-;; Disable the "package cl is deprecated" warning
+;; Suppress the "package cl is deprecated" warning
 (setq byte-compile-warnings '(cl-functions))
+
+;; Suppress warnings and errors during asynchronous native compilation
+(setq native-comp-async-report-warnings-errors nil)
 
 ;;; early-init.el ends here
