@@ -1019,11 +1019,6 @@ Dependencies:
     :custom
     (elfeed-search-title-max-width 100)
     (elfeed-search-filter "@3-months-ago +unread ")
-    :custom-face
-    (elfeed-search-date-face ((t (:foreground "#83a598" :underline nil))))
-    (elfeed-search-feed-face ((t (:foreground "#83a598"))))
-    (elfeed-search-tag-face  ((t (:foreground "#928374"))))
-    (elfeed-search-unread-title-face ((t (:foreground "#ebdbb2" :weight bold))))
     :config
     ;; Star and unstar feeds
     (defalias 'elfeed-toggle-starred
