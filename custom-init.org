@@ -1487,8 +1487,6 @@ A contact manager for Org mode.
 
 #+begin_src emacs-lisp
   (use-package org-contacts
-    :disabled
-    :ensure nil
     :after org
     :custom
     (org-contacts-files '("~/orgfiles/contacts.org")))
