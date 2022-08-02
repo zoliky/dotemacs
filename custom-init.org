@@ -248,9 +248,6 @@ Enable automatic spell checking and offer suggestions for misspelled words.
     :after flyspell
     :bind (:map flyspell-mode-map
                 ("C-;" . flyspell-correct-wrapper)))
-
-  (use-package flyspell-correct-ivy
-    :after (flyspell-correct ivy))
 #+end_src
 
 * Packages
