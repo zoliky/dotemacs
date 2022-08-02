@@ -448,15 +448,11 @@ Helpful improves the built-in Emacs help system by providing more contextual inf
 
 #+begin_src emacs-lisp
   (use-package helpful
-    :after counsel
     :bind
     ([remap describe-key]      . helpful-key)
     ([remap describe-command]  . helpful-command)
-    ([remap describe-variable] . counsel-describe-variable)
-    ([remap describe-function] . counsel-describe-function)
-    :custom
-    (counsel-describe-function-function #'helpful-callable)
-    (counsel-describe-variable-function #'helpful-variable))
+    ([remap describe-variable] . helpful-variable)
+    ([remap describe-function] . helpful-callable))
 #+end_src
 
 *** Ibuffer
