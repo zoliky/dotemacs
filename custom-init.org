@@ -89,9 +89,10 @@ Initialize the package system.
 
 #+begin_src emacs-lisp
   (require 'package)
-  (setq package-archives '(("melpa" . "https://melpa.org/packages/")
-                           ("org"   . "https://orgmode.org/elpa/")
-                           ("gnu"   . "https://elpa.gnu.org/packages/")))
+  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+  (setq package-archive-priorities '(("melpa"  . 100)
+                                     ("gnu"    .  50)
+                                     ("nongnu" .  25)))
   (package-initialize)
 #+end_src
 
