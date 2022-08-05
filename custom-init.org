@@ -206,9 +206,6 @@ Fonts and text size.
     (set-face-attribute 'org-block nil :inherit 'fixed-pitch :foreground nil)
     (set-face-attribute 'org-code  nil :inherit '(shadow fixed-pitch)))
 
-  ;; Emoji
-  (set-fontset-font t '(#x1f300 . #x1fad0) (font-spec :family "Noto Color Emoji"))
-
   ;; International Phonetic Alphabet
   (set-fontset-font t 'phonetic (font-spec :family "DejaVu Sans Mono"))
   (dolist (char (string-to-list "æθðŋʷʸˈˌ"))
