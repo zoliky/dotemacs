@@ -128,7 +128,8 @@ Override some of the defaults.
    major-mode 'text-mode                ; Set the default major mode to text-mode
    ring-bell-function 'ignore           ; Disable the error beep sound
    inhibit-compacting-font-caches nil)  ; Prevent compacting font caches during garbage collection
-  (show-paren-mode t)                   ; Enable visualization of matching brackets
+  (savehist-mode t)                     ; Save the minibuffer history
+  (show-paren-mode t)                   ; Enable visualization of matching parens
   (save-place-mode t)                   ; Jump to the last known position when reopening a file
   (electric-pair-mode t)                ; Enable automatic brackets pairing
   (global-hl-line-mode t)               ; Enable line highlighting in all buffers
