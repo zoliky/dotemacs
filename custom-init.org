@@ -596,7 +596,7 @@ Projectile is a project interaction library for Emacs.
   (use-package projectile
     :init
     (projectile-mode)
-    :bind ("C-x p" . projectile-command-map))
+    :bind ("C-c p" . projectile-command-map))
 #+end_src
 
 *** Rainbow delimiters
@@ -991,7 +991,7 @@ Dependencies:
         (unless (or elfeed-search-remain-on-entry (use-region-p))))
       (message "Loading...")
       (add-hook 'focus-out-hook (lambda () (message nil))))
-    :bind (("C-c w" . elfeed)
+    :bind (("C-c e" . elfeed)
            :map elfeed-search-mode-map
            ("M" . elfeed-toggle-starred)
            ("b" . king/elfeed-search-browse-url)
@@ -1041,8 +1041,8 @@ Dependencies:
 
 #+begin_src emacs-lisp
   (use-package emms
-    :bind (("C-c p"  . emms)
-           ("C-c P"  . emms-browser)
+    :bind (("C-c u"  . emms)
+           ("C-c U"  . emms-browser)
            ("<C-f1>" . emms-show)
            ("<C-f2>" . emms-volume-lower)
            ("<C-f3>" . emms-volume-raise)
@@ -1092,7 +1092,7 @@ Open the Emacs configuration file.
     (interactive)
     (find-file "~/dotemacs/custom-init.org"))
 
-  (global-set-key (kbd "C-c e") 'king/open-emacs-config)
+  (global-set-key (kbd "C-c q") 'king/open-emacs-config)
 #+end_src
 
 Move the cursor to the first non-whitespace character of the line. If the cursor is already there, then move it to the beginning of the line.
