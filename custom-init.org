@@ -594,12 +594,9 @@ Projectile is a project interaction library for Emacs.
 
 #+begin_src emacs-lisp
   (use-package projectile
-    :after ivy
     :init
     (projectile-mode)
-    :bind ("C-x p" . projectile-command-map)
-    :custom
-    (projectile-completion-system 'ivy))
+    :bind ("C-x p" . projectile-command-map))
 #+end_src
 
 *** Rainbow delimiters
