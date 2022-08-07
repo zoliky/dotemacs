@@ -21,6 +21,7 @@ Emacs is an extensible computing environment that I use mainly for its text edit
     - [[#solarized][Solarized]]
   - [[#general-enhancements][General enhancements]]
     - [[#avy][Avy]]
+    - [[#corfu][Corfu]]
     - [[#dashboard][Dashboard]]
     - [[#dired][Dired]]
     - [[#doom-modeline][Doom modeline]]
@@ -282,6 +283,28 @@ Avy provides an interface to quickly jump to any visible position in a buffer.
 #+begin_src emacs-lisp
   (use-package avy
     :bind ("M-s" . avy-goto-char))
+#+end_src
+
+*** Corfu
+
+Corfu is a completion UI for Emacs.
+
+#+begin_src emacs-lisp
+  (use-package corfu
+    :init
+    (global-corfu-mode)
+    :custom
+    (corfu-auto t)
+    (corfu-cycle t)
+    (corfu-auto-prefix 1)
+    (corfu-auto-delay 0.1)
+    (corfu-quit-no-match 'separator)
+    (corfu-excluded-modes '(org-mode mu4e-compose-mode)))
+
+  (use-package cape
+    :init
+    (add-to-list 'completion-at-point-functions #'cape-dabbrev)
+    (add-to-list 'completion-at-point-functions #'cape-file))
 #+end_src
 
 *** Dashboard
