@@ -21,7 +21,6 @@ Emacs is an extensible computing environment that I use mainly for its text edit
     - [[#solarized][Solarized]]
   - [[#general-enhancements][General enhancements]]
     - [[#avy][Avy]]
-    - [[#company][Company]]
     - [[#dashboard][Dashboard]]
     - [[#dired][Dired]]
     - [[#doom-modeline][Doom modeline]]
@@ -283,27 +282,6 @@ Avy provides an interface to quickly jump to any visible position in a buffer.
 #+begin_src emacs-lisp
   (use-package avy
     :bind ("M-s" . avy-goto-char))
-#+end_src
-
-*** Company
-
-Company is a text completion framework for Emacs.
-
-#+begin_src emacs-lisp
-  (use-package company
-    :init
-    (global-company-mode)
-    :custom
-    (company-idle-delay 0)
-    (company-minimum-prefix-length 1)
-    (company-selection-wrap-around t)
-    :config
-    (company-tng-mode t))
-    ;(add-to-list 'company-backends 'company-web-html))
-
-  (use-package company-box
-    :after company
-    :hook (company-mode . company-box-mode))
 #+end_src
 
 *** Dashboard
