@@ -1333,7 +1333,7 @@ Prettify Org headings by replacing leading stars with UTF-8 bullets.
        (holiday-easter-etc 56   "Trinity Sunday (Szentháromság Vasárnapja)")
        (holiday-easter-etc 60   "Corpus Christi (Úrnapja)")
        (holiday-greek-orthodox-easter)
-       (holiday-fixed  8  5     "Assumption (Nagyboldogasszony)")
+       (holiday-fixed  8 15     "Assumption (Nagyboldogasszony)")
        (holiday-fixed 11  1     "All Saints' Day (Mindenszentek Napja)")
        (holiday-fixed 11  2     "Day of the Dead (Hallotak Napja)")
        (holiday-fixed 12 25     "Christmas Day (Karácsony Napja)")))
