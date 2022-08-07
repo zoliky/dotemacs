@@ -35,7 +35,6 @@ Emacs is an extensible computing environment that I use mainly for its text edit
     - [[#ibuffer][Ibuffer]]
     - [[#icons][Icons]]
     - [[#indent-guides][Indent guides]]
-    - [[#ivy][IVY]]
     - [[#lsp][LSP]]
     - [[#magit][Magit]]
     - [[#move-text][Move text]]
@@ -493,47 +492,6 @@ Highlight the indentation level in Emacs buffers.
     :custom
     (highlight-indent-guides-responsive 'top)
     (highlight-indent-guides-method 'character))
-#+end_src
-
-*** IVY
-
-IVY helps to rapidly complete file names, buffer names, or any other Emacs interactions requiring selecting an item from a list of possible choices.
-
-#+begin_src emacs-lisp
-  (use-package ivy
-    :init
-    (ivy-mode)
-    :bind ("C-s" . swiper)
-    :custom
-    (ivy-wrap t)
-    (ivy-use-virtual-buffers t)
-    (ivy-count-format "(%d/%d) ")
-    (ivy-initial-inputs-alist nil)
-    (enable-recursive-minibuffers t))
-
-  (use-package ivy-rich
-    :after ivy
-    :init
-    (ivy-rich-mode))
-
-  (use-package all-the-icons-ivy-rich
-    :after (all-the-icons ivy-rich)
-    :init
-    (all-the-icons-ivy-rich-mode))
-
-  (use-package ivy-emoji
-    :after ivy)
-
-  (use-package counsel
-    :after ivy
-    :bind (("M-x"     . counsel-M-x)
-           ("C-c r"   . counsel-recentf)
-           ("C-x C-f" . counsel-find-file)
-           :map minibuffer-local-map
-           ("C-r"     . 'counsel-minibuffer-history)))
-
-  (use-package counsel-projectile
-    :after (counsel projectile))
 #+end_src
 
 *** LSP
