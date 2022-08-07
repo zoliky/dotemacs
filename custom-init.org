@@ -44,6 +44,7 @@ Emacs is an extensible computing environment that I use mainly for its text edit
     - [[#rainbow-mode][Rainbow mode]]
     - [[#super-save][Super save]]
     - [[#try][Try]]
+    - [[#vertico][Vertico]]
     - [[#web-mode][Web mode]]
     - [[#which-key][Which key]]
   - [[#languages][Languages]]
@@ -595,6 +596,47 @@ Try is a package that allows to try out Emacs packages without installing them.
 
 #+begin_src emacs-lisp
   (use-package try)
+#+end_src
+
+*** Vertico
+
+Vertico helps to rapidly complete file names, buffer names, or any other Emacs interactions requiring selecting an item from a list of possible choices.
+
+#+begin_src emacs-lisp
+  (use-package vertico
+    :init
+    (vertico-mode)
+    :custom
+    (vertico-cycle t))
+
+  (use-package vertico-directory
+    :ensure nil
+    :after vertico
+    :bind (:map vertico-map
+                ("RET"   . vertico-directory-enter)
+                ("DEL"   . vertico-directory-delete-char)
+                ("M-DEL" . vertico-directory-delete-word))
+    :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
+
+  (use-package orderless
+    :custom
+    (completion-styles '(orderless basic))
+    (completion-category-overrides '((file (styles basic partial-completion)))))
+
+  (use-package marginalia
+    :init
+    (marginalia-mode)
+    :custom
+    (marginalia-align 'right))
+
+  (use-package all-the-icons-completion
+    :after (all-the-icons marginalia)
+    :init
+    (all-the-icons-completion-mode))
+
+  (use-package consult
+    :bind (("C-s"   . consult-line)
+           ("C-x b" . consult-buffer)))
 #+end_src
 
 *** Web mode
