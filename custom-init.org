@@ -1328,7 +1328,8 @@ Prettify Org headings by replacing leading stars with UTF-8 bullets.
      '((holiday-fixed  1  1     "New Year's Day (Újév)")
        (holiday-fixed  2 14     "Valentine's Day (Valentin Nap)")
        (holiday-fixed  3  8     "International Women's Day (Nemzetközi Nőnap)")
-       (holiday-fixed 10 31     "Halloween (Észak-Amerikai Ünnep)")))
+       (holiday-fixed 10 31     "Halloween (Észak-Amerikai Ünnep)")
+       (holiday-float 11  4  4  "Thanksgiving (Észak-Amerikai Ünnep)")))
     (holiday-local-holidays
      '((holiday-fixed  5  1     "Labor Day (A Munka Ünnepe)")
        (holiday-float  5  0  2  "Mother's Day (Anyák Napja)")))
