@@ -1332,7 +1332,7 @@ Prettify Org headings by replacing leading stars with UTF-8 bullets.
        (holiday-float 11  4  4  "Thanksgiving (Észak-Amerikai Ünnep)")))
     (holiday-local-holidays
      '((holiday-fixed  5  1     "Labor Day (A Munka Ünnepe)")
-       (holiday-float  5  0  2  "Mother's Day (Anyák Napja)")))
+       (holiday-float  5  0  1  "Mother's Day (Anyák Napja)")))
     (holiday-hebrew-holidays nil)
     (holiday-islamic-holidays nil)
     (holiday-oriental-holidays nil))
