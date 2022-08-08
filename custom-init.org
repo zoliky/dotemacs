@@ -48,18 +48,13 @@ Emacs is an extensible computing environment that I use mainly for its text edit
     - [[#web-mode][Web mode]]
     - [[#which-key][Which key]]
   - [[#languages][Languages]]
-    - [[#clojure][Clojure]]
-    - [[#dart][Dart]]
     - [[#golang][Golang]]
     - [[#haskell][Haskell]]
     - [[#html][HTML]]
     - [[#javascript][JavaScript]]
     - [[#json][JSON]]
     - [[#markdown][Markdown]]
-    - [[#php][PHP]]
-    - [[#rust][Rust]]
     - [[#toml][TOML]]
-    - [[#typescript][TypeScript]]
     - [[#yaml][YAML]]
 - [[#applications][Applications]]
   - [[#email][Email]]
@@ -505,7 +500,7 @@ Language Server Protocol support for Emacs.
     :commands lsp
     :init
     (setq lsp-keymap-prefix "C-c l")
-    :hook ((web-mode js2-mode typescript-mode php-mode) . lsp))
+    :hook ((web-mode js2-mode) . lsp))
 
   (use-package lsp-ui
     :hook (lsp-mode . lsp-ui-mode)
@@ -670,24 +665,6 @@ An Emacs package that displays available keybindings in a panel. For example, if
 #+end_src
 
 ** Languages
-*** Clojure
-
-Major mode for editing Clojure files.
-
-#+begin_src emacs-lisp
-  (use-package cider
-    :mode "\\.clj[sc]?\\'")
-#+end_src
-
-*** Dart
-
-Major mode for editing Dart files.
-
-#+begin_src emacs-lisp
-  (use-package dart-mode
-    :mode "\\.dart\\'")
-#+end_src
-
 *** Golang
 
 Major mode for editing Go files.
@@ -751,30 +728,6 @@ Major mode for editing Markdown files.
            ("\\.markdown\\'" . markdown-mode)))
 #+end_src
 
-*** PHP
-
-Major mode for editing PHP files.
-
-#+begin_src emacs-lisp
-  (use-package php-mode
-    :mode "\\.php\\'")
-#+end_src
-
-*** Rust
-
-Major mode for editing Rust files.
-
-#+begin_src emacs-lisp
-  (use-package rust-mode
-    :mode "\\.rs\\'"
-    :init
-    (setq rust-format-on-save t))
-
-  (use-package cargo
-    :after rust-mode
-    :hook (rust-mode . cargo-minor-mode))
-#+end_src
-
 *** TOML
 
 Major mode for editing TOML files.
@@ -782,15 +735,6 @@ Major mode for editing TOML files.
 #+begin_src emacs-lisp
   (use-package toml-mode
     :mode "\\.toml\\'")
-#+end_src
-
-*** TypeScript
-
-Major mode for editing TypeScript files.
-
-#+begin_src emacs-lisp
-  (use-package typescript-mode
-    :mode "\\.ts\\'")
 #+end_src
 
 *** YAML
