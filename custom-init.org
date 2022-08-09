@@ -536,6 +536,7 @@ Olivetti is a package designed to create a distraction-free writing environment.
 #+begin_src emacs-lisp
   (use-package olivetti
     :hook ((org-mode          . olivetti-mode)
+           (markdown-mode     . olivetti-mode)
            (mu4e-view-mode    . olivetti-mode)
            (elfeed-show-mode  . olivetti-mode)
            (mu4e-compose-mode . olivetti-mode))
@@ -723,6 +724,7 @@ Major mode for editing Markdown files.
   (use-package markdown-mode
     :init
     (setq markdown-command "multimarkdown")
+    :hook (markdown-mode . (lambda () (display-line-numbers-mode -1)))
     :mode (("README\\.md\\'" . gfm-mode)
            ("\\.md\\'"       . markdown-mode)
            ("\\.markdown\\'" . markdown-mode)))
