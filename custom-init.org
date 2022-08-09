@@ -1425,7 +1425,7 @@ A contact manager for Org mode.
   (use-package org-contacts
     :after org
     :custom
-    (org-contacts-files '("~/orgfiles/contacts.org")))
+    (org-contacts-files (list (concat org-directory "/contacts.org"))))
 #+end_src
 
 ** Crypt
