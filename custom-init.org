@@ -1226,6 +1226,7 @@ Org mode is a a to-do, agenda, project planner, literate programming, note-takin
                      ("noexport" . ?n)
                      ("expired"  . ?x)
                      ("TOC"      . ?T)))
+    (org-tags-sort-function 'org-string-collate-lessp)
     (org-tags-exclude-from-inheritance '("crypt"))
     (org-todo-keywords '((sequence "TODO(t)"
                                    "STARTED(s)"
