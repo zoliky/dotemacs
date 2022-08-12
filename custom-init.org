@@ -1214,7 +1214,7 @@ Org mode is a a to-do, agenda, project planner, literate programming, note-takin
     (org-directory "~/orgfiles")
     (org-export-with-tags nil)
     (org-export-headline-levels 5)
-    (org-export-backends '(html latex odt))
+    (org-export-backends '(html latex))
     (org-startup-with-inline-images t)
     (org-modules '(org-crypt org-habit))
     (org-tag-alist '(("crypt"    . ?c)
