@@ -1208,6 +1208,7 @@ Org mode is a a to-do, agenda, project planner, literate programming, note-takin
     (org-log-done 'time)
     (org-log-into-drawer t)
     (org-clock-into-drawer t)
+    (org-image-actual-width nil)
     (org-src-fontify-natively t)
     (org-src-tab-acts-natively t)
     (org-directory "~/orgfiles")
