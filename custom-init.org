@@ -53,6 +53,7 @@ Emacs is an extensible computing environment that I use mainly for its text edit
     - [[#html][HTML]]
     - [[#javascript][JavaScript]]
     - [[#json][JSON]]
+    - [[#lua][Lua]]
     - [[#markdown][Markdown]]
     - [[#toml][TOML]]
     - [[#yaml][YAML]]
@@ -715,6 +716,15 @@ Major mode for editing JSON files.
       (when (eq major-mode 'json-mode)
         (json-pretty-print-buffer)))
     :hook (before-save . king/json-mode-before-save-hook))
+#+end_src
+
+*** Lua
+
+Major mode for editing Lua files.
+
+#+begin_src emacs-lisp
+  (use-package lua-mode
+    :mode "\\.lua\\'")
 #+end_src
 
 *** Markdown
