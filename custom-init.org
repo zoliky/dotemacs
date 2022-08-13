@@ -73,6 +73,7 @@ Emacs is an extensible computing environment that I use mainly for its text edit
   - [[#cliplink][Cliplink]]
   - [[#contacts][Contacts]]
   - [[#crypt][Crypt]]
+  - [[#denote][Denote]]
   - [[#export][Export]]
   - [[#indentation][Indentation]]
   - [[#ql][QL]]
@@ -1443,6 +1444,21 @@ Encrypt and decrypt entries in Org mode.
     (org-crypt-key "182BC820D271E36BE128AD05D1F775A0A21D3351")
     :config
     (org-crypt-use-before-save-magic))
+#+end_src
+
+** Denote
+
+A simple note-taking tool, based on the idea that notes should follow a predictable and descriptive file-naming scheme.
+
+#+begin_src emacs-lisp
+  (use-package denote
+    :after org
+    :bind ("C-c d" . denote)
+    :hook (dired-mode . denote-dired-mode)
+    :custom
+    (denote-sort-keywords t)
+    (denote-allow-multi-word-keywords nil)
+    (denote-directory (concat org-directory "/")))
 #+end_src
 
 ** Export
