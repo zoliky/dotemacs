@@ -1363,63 +1363,44 @@ Templates to quickly record tasks, notes, and other semi-structured information.
     :ensure nil
     :after org
     :preface
-    (defvar king/org-contacts-template "* %?
-  :PROPERTIES:
-  :BIRTHDAY:
-  :EMAIL:
-  :MOBILE:
-  :ADDRESS:
-  :CITY:
-  :STATE:
-  :COUNTRY:
-  :ZIP:
-  :WEBSITE:
-  :SKYPE:
-  :NOTE:
-  :END:" "Template for org-contacts")
+    (defvar king/org-contacts-template
+      (concat "* %?\n"
+              ":PROPERTIES:\n"
+              ":Created: %U\n"
+              ":Birthday: yyyy-mm-dd\n"
+              ":Email:\n"
+              ":Mobile:\n"
+              ":Skype:\n"
+              ":Address:\n"
+              ":City:\n"
+              ":State:\n"
+              ":Country:\n"
+              ":PostalCode:\n"
+              ":Website:\n"
+              ":Note:\n"
+              ":END:\n") "Template for a contact")
     :custom
     (org-capture-templates
      `(
        ;; Bookmarks
-       ("b" "Bookmark")
-
-       ("bc" "New Bookmark (Clipboard)"
+       ("b" "Bookmark"
         entry (file+headline ,(concat org-directory "/refile.org") "Bookmarks")
-        "* %(org-cliplink-capture)%?")
-
-       ("bn" "New Bookmark"
-        entry (file+headline ,(concat org-directory "/refile.org") "Bookmarks")
-        "* %?")
+        "* %?\n:PROPERTIES:\n:Created: %U\n:END:\n")
 
        ;; Contacts
-       ("c" "New Contact"
+       ("c" "Contact"
         entry (file+headline ,(concat org-directory "/refile.org") "Contacts"),
         king/org-contacts-template)
 
-       ;; English
-       ("e" "English")
-
-       ("en" "New Idiom"
-        entry (file+headline ,(concat org-directory "/refile.org") "Idioms")
-        "* %?\n\nDescription\n\nExample :: Transcription" :empty-lines 1)
-
        ;; Notes
-       ("n" "Note")
-
-       ("nc" "New Note (Clipboard)"
+       ("n" "Note"
         entry (file+headline ,(concat org-directory "/refile.org") "Notes")
-        "* %?\n:PROPERTIES:\n:ADDED: %U\n:SOURCE-URL:\n:END:\n\n%x" :empty-lines 1)
+        "* %?\n:PROPERTIES:\n:Created: %U\n:END:\n")
 
-       ("nn" "New Note"
-        entry (file+headline ,(concat org-directory "/refile.org") "Notes")
-        "* %?\n:PROPERTIES:\n:ADDED: %U\n:SOURCE-URL:\n:END:\n\n" :empty-lines 1)
-     
        ;; Tasks
-       ("t" "Task")
-
-       ("tn" "New Task"
+       ("t" "Task"
         entry (file+headline ,(concat org-directory "/refile.org") "Tasks")
-        "* TODO %?"))))
+        "* TODO %?\n:PROPERTIES:\n:Created: %U\n:END:\n"))))
 #+end_src
 
 ** Cliplink
