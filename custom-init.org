@@ -1286,7 +1286,7 @@ Org mode is a a to-do, agenda, project planner, literate programming, note-takin
        ("DONE"      . (:foreground "limegreen"     :weight bold))
        ("CANCELLED" . (:foreground "darkgray"      :weight bold))))
     (org-refile-allow-creating-parent-nodes 'confirm)
-    (org-refile-targets '((org-agenda-files . (:maxlevel . 2)))))
+    (org-refile-targets '((org-agenda-files . (:maxlevel . 4)))))
 
   ;; Replace list hyphens with bullets
   (font-lock-add-keywords
