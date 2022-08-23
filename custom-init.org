@@ -1247,8 +1247,9 @@ Org mode is a a to-do, agenda, project planner, literate programming, note-takin
            ("C-c c" . org-capture))
     :custom
     (org-ellipsis " ▾")
-    (org-startup-folded t)
+    (org-tags-column 0)
     (org-log-done 'time)
+    (org-startup-folded t)
     (org-log-into-drawer t)
     (org-clock-into-drawer t)
     (org-image-actual-width nil)
