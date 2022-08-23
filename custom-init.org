@@ -259,6 +259,7 @@ Enable automatic spell checking and offer suggestions for misspelled words.
 
 #+begin_src emacs-lisp
   (use-package solarized-theme
+    :defer t
     :custom
     (solarized-use-less-bold t)
     (solarized-height-plus-1 1.0)
@@ -391,6 +392,7 @@ EditorConfig helps developers define consistent coding styles across various edi
 
 #+begin_src emacs-lisp
   (use-package editorconfig
+    :defer t
     :init
     (editorconfig-mode))
 #+end_src
@@ -599,6 +601,7 @@ Super save automatically saves buffers when switching to a different application
 
 #+begin_src emacs-lisp
   (use-package super-save
+    :defer t
     :init
     (super-save-mode)
     :custom
@@ -612,7 +615,8 @@ Super save automatically saves buffers when switching to a different application
 Try is a package that allows to try out Emacs packages without installing them.
 
 #+begin_src emacs-lisp
-  (use-package try)
+  (use-package try
+    :defer t)
 #+end_src
 
 *** Vertico
@@ -679,6 +683,7 @@ An Emacs package that displays available keybindings in a panel. For example, if
 
 #+begin_src emacs-lisp
   (use-package which-key
+    :defer t
     :init
     (which-key-mode)
     :custom
@@ -848,6 +853,7 @@ Dependencies:
     (smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))))
 
   (use-package org-mime
+    :defer t
     :config
     (setq org-mime-export-options '(:section-numbers nil
                                     :with-author nil
@@ -1502,7 +1508,7 @@ A library for searching Org entries with a query language based on S (Lisp) expr
 
 #+begin_src emacs-lisp
   (use-package org-ql
-    :after org)
+    :defer t)
 #+end_src
 
 ** Toc
