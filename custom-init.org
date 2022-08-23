@@ -72,12 +72,10 @@ Emacs is an extensible computing environment that I use mainly for its text edit
   - [[#bullets][Bullets]]
   - [[#calendar][Calendar]]
   - [[#capture][Capture]]
-  - [[#cliplink][Cliplink]]
   - [[#contacts][Contacts]]
   - [[#crypt][Crypt]]
   - [[#denote][Denote]]
   - [[#export][Export]]
-  - [[#indentation][Indentation]]
   - [[#ql][QL]]
   - [[#toc][Toc]]
 
@@ -1423,15 +1421,6 @@ Templates to quickly record tasks, notes, and other semi-structured information.
         "* TODO %?\n:PROPERTIES:\n:Created: %U\n:END:\n"))))
 #+end_src
 
-** Cliplink
-
-A package to capture URLs from the clipboard.
-
-#+begin_src emacs-lisp
-  (use-package org-cliplink
-    :after org)
-#+end_src
-
 ** Contacts
 
 A contact manager for Org mode.
@@ -1502,16 +1491,6 @@ Dependencies:
        ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
        ("\\paragraph{%s}"     . "\\paragraph*{%s}")
        ("\\subparagraph{%s}"  . "\\subparagraph*{%s}"))))
-#+end_src
-
-** Indentation
-
-Indent text to match the indentation of headings.
-
-#+begin_src emacs-lisp
-  (use-package org-indent
-    :ensure nil
-    :after org)
 #+end_src
 
 ** QL
