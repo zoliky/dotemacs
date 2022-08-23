@@ -17,6 +17,7 @@ Emacs is an extensible computing environment that I use mainly for its text edit
   - [[#spell-checking][Spell checking]]
 - [[#packages][Packages]]
   - [[#color-schemes][Color schemes]]
+    - [[#ef][Ef]]
     - [[#gruvbox][Gruvbox]]
     - [[#solarized][Solarized]]
   - [[#general-enhancements][General enhancements]]
@@ -247,6 +248,12 @@ Enable automatic spell checking and offer suggestions for misspelled words.
 
 * Packages
 ** Color schemes
+*** Ef
+
+#+begin_src emacs-lisp
+  (use-package ef-themes)
+#+end_src
+
 *** Gruvbox
 
 #+begin_src emacs-lisp
