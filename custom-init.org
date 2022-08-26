@@ -1212,6 +1212,7 @@ Input methods provide convenient ways of entering non-ASCII characters from the 
    ("\\fi" ?↘) ; FALLING INFLECTION
    ("\\lw" ?ʷ) ; LABIAL HIGH ROUNDED
    ("\\ly" ?ʸ) ; PALATAL HIGH UNROUNDED
+   ("\\st" ?̚) ; NO AUDIBLE RELEASE
 
    ;; Common symbols
    ("\\copy"   ?©)  ; COPYRIGHT
