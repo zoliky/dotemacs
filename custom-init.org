@@ -19,7 +19,6 @@ Emacs is an extensible computing environment that I use mainly for its text edit
   - [[#color-schemes][Color schemes]]
     - [[#ef][Ef]]
     - [[#gruvbox][Gruvbox]]
-    - [[#solarized][Solarized]]
   - [[#general-enhancements][General enhancements]]
     - [[#avy][Avy]]
     - [[#corfu][Corfu]]
@@ -260,23 +259,6 @@ Enable automatic spell checking and offer suggestions for misspelled words.
   (use-package gruvbox-theme
     :config
     (load-theme 'gruvbox-dark-medium t))
-#+end_src
-
-*** Solarized
-
-#+begin_src emacs-lisp
-  (use-package solarized-theme
-    :defer t
-    :custom
-    (solarized-use-less-bold t)
-    (solarized-height-plus-1 1.0)
-    (solarized-height-plus-2 1.0)
-    (solarized-height-plus-3 1.0)
-    (solarized-height-plus-4 1.0)
-    (solarized-height-minus-1 1.0)
-    (solarized-use-variable-pitch nil)
-    (solarized-scale-org-headlines nil)
-    (solarized-scale-outline-headlines nil))
 #+end_src
 
 ** General enhancements
