@@ -354,11 +354,7 @@ Doom modeline is a modeline for GNU Emacs inspired by the Doom theme collection.
     (doom-modeline-mode)
     :custom
     (doom-modeline-mu4e t)
-    (doom-modeline-height 26)
-    :custom-face
-    (mode-line ((t (:family "Hack" :height 170))))
-    (mode-line-active ((t (:family "Hack" :height 170))))
-    (mode-line-inactive ((t (:family "Hack" :height 170)))))
+    (doom-modeline-height 38))
 #+end_src
 
 *** Duplicate thing
