@@ -250,15 +250,15 @@ Enable automatic spell checking and offer suggestions for misspelled words.
 *** Ef
 
 #+begin_src emacs-lisp
-  (use-package ef-themes)
+  (use-package ef-themes
+    :config
+    (load-theme 'ef-summer t))
 #+end_src
 
 *** Gruvbox
 
 #+begin_src emacs-lisp
-  (use-package gruvbox-theme
-    :config
-    (load-theme 'gruvbox-dark-medium t))
+  (use-package gruvbox-theme)
 #+end_src
 
 ** General enhancements
