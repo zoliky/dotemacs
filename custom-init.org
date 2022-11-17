@@ -35,7 +35,6 @@ Emacs is an extensible computing environment that I use mainly for its text edit
     - [[#ibuffer][Ibuffer]]
     - [[#icons][Icons]]
     - [[#indent-guides][Indent guides]]
-    - [[#lsp][LSP]]
     - [[#magit][Magit]]
     - [[#move-text][Move text]]
     - [[#nov][Nov]]
@@ -477,23 +476,6 @@ Highlight the indentation level in Emacs buffers.
     :custom
     (highlight-indent-guides-responsive 'top)
     (highlight-indent-guides-method 'character))
-#+end_src
-
-*** LSP
-
-Language Server Protocol support for Emacs.
-
-#+begin_src emacs-lisp
-  (use-package lsp-mode
-    :commands lsp
-    :init
-    (setq lsp-keymap-prefix "C-c l")
-    :hook ((web-mode js2-mode) . lsp))
-
-  (use-package lsp-ui
-    :hook (lsp-mode . lsp-ui-mode)
-    :custom
-    (lsp-ui-doc-position 'bottom))
 #+end_src
 
 *** Magit
