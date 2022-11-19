@@ -256,7 +256,8 @@ Enable automatic spell checking and offer suggestions for misspelled words.
 *** Gruvbox
 
 #+begin_src emacs-lisp
-  (use-package gruvbox-theme)
+  (use-package gruvbox-theme
+    :defer t)
 #+end_src
 
 ** General enhancements
