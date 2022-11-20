@@ -1265,23 +1265,23 @@ Org mode is a a to-do, agenda, project planner, literate programming, note-takin
     :ensure nil
     :custom
     (org-agenda-files
-     (list
-      (concat org-directory "/bookmarks.org")
-      (concat org-directory "/calendar.org")
-      (concat org-directory "/contacts.org")
-      (concat org-directory "/work.org")
-      (concat org-directory "/misc.org")
-      (concat org-directory "/notes.org")
-      (concat org-directory "/books.org")
-      (concat org-directory "/tasks.org")
-      (concat org-directory "/people.org")
-      (concat org-directory "/refile.org")
-      (concat org-directory "/habits.org")
-      (concat org-directory "/elfeed.org")
-      (concat org-directory "/english.org")
-      (concat org-directory "/spanish.org")
-      (concat org-directory "/courses.org")
-      (concat org-directory "/private.org")))
+     (seq-filter #'file-exists-p
+                 (mapcar #'(lambda (file) (file-name-concat org-directory file))
+                         '("bookmarks.org"
+                           "calendar.org"
+                           "contacts.org"
+                           "work.org"
+                           "misc.org"
+                           "daily.org"
+                           "notes.org"
+                           "tasks.org"
+                           "people.org"
+                           "refile.org"
+                           "habits.org"
+                           "elfeed.org"
+                           "english.org"
+                           "spanish.org"
+                           "private.org"))))
     (org-agenda-include-diary t)
     (org-habit-graph-column 80)
     (org-habit-today-glyph ?⧖)
