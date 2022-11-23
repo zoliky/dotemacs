@@ -190,17 +190,13 @@ Fonts and text size.
 
 #+begin_src emacs-lisp
   ;; Default
-  (set-face-attribute 'default nil :font "Hack" :height 180)
+  (set-face-attribute 'default nil :family "Hack" :height 180)
 
   ;; Variable-pitch
-  (set-face-attribute 'variable-pitch nil :font "Hack" :height 180)
+  (set-face-attribute 'variable-pitch nil :family "Hack" :height 180)
 
   ;; Fixed-pitch
-  (set-face-attribute 'fixed-pitch nil :font "DejaVu Sans Mono")
-  (defun king/org-fixed-pitch ()
-    (set-face-attribute 'org-table nil :inherit 'fixed-pitch)
-    (set-face-attribute 'org-block nil :inherit 'fixed-pitch :foreground nil)
-    (set-face-attribute 'org-code  nil :inherit '(shadow fixed-pitch)))
+  (set-face-attribute 'fixed-pitch nil :family "Hack")
 
   ;; International Phonetic Alphabet
   (set-fontset-font t 'phonetic (font-spec :family "DejaVu Sans Mono"))
@@ -1189,7 +1185,6 @@ Org mode is a a to-do, agenda, project planner, literate programming, note-takin
     :ensure nil
     :hook (org-mode . (lambda ()
                         (org-indent-mode)
-                        (king/org-fixed-pitch)
                         (variable-pitch-mode -1)
                         (display-line-numbers-mode -1)
                         (set-input-method "custom-input-method")))
@@ -1236,6 +1231,16 @@ Org mode is a a to-do, agenda, project planner, literate programming, note-takin
                                    "REVIEW(r)" "|"
                                    "DONE(d)"
                                    "CANCELLED(c)")))
+    (org-refile-allow-creating-parent-nodes 'confirm)
+    (org-refile-targets '((org-agenda-files . (:maxlevel . 4)))))
+
+  (use-package org-faces
+    :ensure nil
+    :custom-face
+    (org-table ((nil (:inherit fixed-pitch))))
+    (org-block ((nil (:inherit fixed-pitch :foreground nil))))
+    (org-code  ((nil (:inherit (shadow fixed-pitch)))))
+    :custom
     (org-todo-keyword-faces
      '(("TODO"      . (:foreground "palevioletred" :weight bold))
        ("STARTED"   . (:foreground "peru"          :weight bold))
@@ -1247,9 +1252,7 @@ Org mode is a a to-do, agenda, project planner, literate programming, note-takin
        ("LEARN"     . (:foreground "lightcoral"    :weight bold))
        ("REVIEW"    . (:foreground "sandybrown"    :weight bold))
        ("DONE"      . (:foreground "limegreen"     :weight bold))
-       ("CANCELLED" . (:foreground "darkgray"      :weight bold))))
-    (org-refile-allow-creating-parent-nodes 'confirm)
-    (org-refile-targets '((org-agenda-files . (:maxlevel . 4)))))
+       ("CANCELLED" . (:foreground "darkgray"      :weight bold)))))
 
   ;; Replace list hyphens with bullets
   (font-lock-add-keywords
