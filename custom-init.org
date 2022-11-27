@@ -1242,17 +1242,17 @@ Org mode is a a to-do, agenda, project planner, literate programming, note-takin
     (org-code  ((nil (:inherit (shadow fixed-pitch)))))
     :custom
     (org-todo-keyword-faces
-     '(("TODO"      . (:foreground "palevioletred" :weight bold))
-       ("STARTED"   . (:foreground "peru"          :weight bold))
-       ("WAITING"   . (:foreground "goldenrod"     :weight bold))
-       ("NEXT"      . (:foreground "darksalmon"    :weight bold))
-       ("POSTPONED" . (:foreground "plum"          :weight bold))
-       ("SOMEDAY"   . (:foreground "mediumpurple"  :weight bold))
-       ("PROJECT"   . (:foreground "cadetblue"     :weight bold))
-       ("LEARN"     . (:foreground "lightcoral"    :weight bold))
-       ("REVIEW"    . (:foreground "sandybrown"    :weight bold))
-       ("DONE"      . (:foreground "limegreen"     :weight bold))
-       ("CANCELLED" . (:foreground "darkgray"      :weight bold)))))
+     '(("TODO"      . (:foreground "red2"         :weight bold))
+       ("STARTED"   . (:foreground "darkcyan"     :weight bold))
+       ("WAITING"   . (:foreground "slateblue"    :weight bold))
+       ("NEXT"      . (:foreground "violetred"    :weight bold))
+       ("POSTPONED" . (:foreground "darkorchid"   :weight bold))
+       ("SOMEDAY"   . (:foreground "chocolate"    :weight bold))
+       ("PROJECT"   . (:foreground "royalblue"    :weight bold))
+       ("LEARN"     . (:foreground "deepskyblue3" :weight bold))
+       ("REVIEW"    . (:foreground "coral3"       :weight bold))
+       ("DONE"      . (:foreground "limegreen"    :weight bold))
+       ("CANCELLED" . (:foreground "slategray"    :weight bold)))))
 
   ;; Replace list hyphens with bullets
   (font-lock-add-keywords
