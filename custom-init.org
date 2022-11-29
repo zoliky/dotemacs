@@ -67,6 +67,7 @@ Emacs is an extensible computing environment that I use mainly for its text edit
 - [[#custom-input-methods][Custom input methods]]
 - [[#org-mode][Org mode]]
   - [[#agenda][Agenda]]
+  - [[#appear][Appear]]
   - [[#bullets][Bullets]]
   - [[#calendar][Calendar]]
   - [[#capture][Capture]]
@@ -1290,6 +1291,16 @@ Org mode is a a to-do, agenda, project planner, literate programming, note-takin
     (org-habit-graph-column 80)
     (org-habit-today-glyph ?⧖)
     (org-habit-completed-glyph ?✓))
+#+end_src
+
+** Appear
+
+A package to toggle visibility of hidden Org elements.
+
+#+begin_src emacs-lisp
+  (use-package org-appear
+    :after org
+    :hook (org-mode . org-appear-mode))
 #+end_src
 
 ** Bullets
