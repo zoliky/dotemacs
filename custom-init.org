@@ -785,6 +785,7 @@ Dependencies:
 
   (use-package mu4e-headers
     :ensure nil
+    :hook (mu4e-headers-mode . (lambda () (eldoc-mode -1)))
     :custom
     (mu4e-headers-auto-update t)
     (mu4e-headers-fields `((:human-date . 12)
