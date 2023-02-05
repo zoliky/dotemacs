@@ -19,6 +19,7 @@ Emacs is an extensible computing environment that I use mainly for its text edit
   - [[#color-schemes][Color schemes]]
     - [[#ef][Ef]]
     - [[#gruvbox][Gruvbox]]
+    - [[#modus][Modus]]
   - [[#general-enhancements][General enhancements]]
     - [[#avy][Avy]]
     - [[#corfu][Corfu]]
@@ -254,6 +255,13 @@ Enable automatic spell checking and offer suggestions for misspelled words.
 
 #+begin_src emacs-lisp
   (use-package gruvbox-theme
+    :defer t)
+#+end_src
+
+*** Modus
+
+#+begin_src emacs-lisp
+  (use-package modus-themes
     :defer t)
 #+end_src
 
