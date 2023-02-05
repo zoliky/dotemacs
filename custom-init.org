@@ -175,19 +175,6 @@ Improve the default scrolling behavior.
     (setq scroll-conservatively 1000))
 #+end_src
 
-Make the frame semi-transparent.
-
-/NOTE: A frame in Emacs is what you would call a window in other editors./
-
-#+begin_src emacs-lisp
-  (use-package frame
-    :ensure nil
-    :config
-    (setq frame-title-format '("%b - Emacs"))
-    (set-frame-parameter (selected-frame) 'alpha '(96 . 96))
-    (add-to-list 'default-frame-alist '(alpha . (96 . 96))))
-#+end_src
-
 Fonts and text size.
 
 #+begin_src emacs-lisp
