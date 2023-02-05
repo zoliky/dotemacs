@@ -13,6 +13,9 @@
 ;; Maximize the Emacs frame on startup
 (push '(fullscreen . maximized) default-frame-alist)
 
+;; Remove host name from titlebar information
+(setq frame-title-format '(multiple-frames "%b" ("" "%b - GNU Emacs")))
+
 ;; Avoid loading the packages again after processing the init file
 (setq package-enable-at-startup nil)
 
