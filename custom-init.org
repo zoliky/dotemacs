@@ -1215,18 +1215,20 @@ Org mode is a a to-do, agenda, project planner, literate programming, note-takin
     (org-tags-sort-function 'org-string-collate-lessp)
     (org-tags-exclude-from-inheritance '("crypt"))
     (org-todo-keywords '((sequence "TODO(t)"
-                                   "STARTED(s)"
-                                   "WAITING(w)"
                                    "NEXT(n)"
+                                   "REPEAT(r)"
+                                   "WAITING(w)"
                                    "POSTPONED(e)"
-                                   "SOMEDAY(o)"
+                                   "SOMEDAY(s)"
+                                   "DELEGATED(o)"
                                    "PROJECT(p)" "|"
                                    "DONE(d)"
+                                   "FORWARDED(f)"
                                    "CANCELLED(c)")
-                         (sequence "LEARN(l)"
-                                   "REVIEW(r)" "|"
-                                   "DONE(d)"
-                                   "CANCELLED(c)")))
+                         (sequence "GOAL(g)" "|"
+                                   "ACHIEVED(a)"
+                                   "FAILED(x)")))
+    (org-todo-repeat-to-state "REPEAT")
     (org-refile-allow-creating-parent-nodes 'confirm)
     (org-refile-targets '((org-agenda-files . (:maxlevel . 4)))))
 
