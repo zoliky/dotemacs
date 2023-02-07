@@ -1007,10 +1007,9 @@ Dependencies:
 * Custom key bindings
 
 #+begin_src emacs-lisp
-  (global-unset-key (kbd "C-z"))               ; Disable C-z
-  (global-set-key (kbd "C-;") 'comment-line)   ; Bind C-; to comment-line
-  (global-set-key (kbd "M-o") 'other-window)   ; Bind M-o to other-window
-  (global-set-key (kbd "M-z") 'zap-up-to-char) ; Bind M-z to zap-up-to-char instead of zap-to-char
+  (keymap-global-unset "C-z")               ; Disable C-z
+  (keymap-global-set "M-o" 'other-window)   ; Bind M-o to other-window
+  (keymap-global-set "M-z" 'zap-up-to-char) ; Bind M-z to zap-up-to-char instead of zap-to-char
 #+end_src
 
 * Custom functions
@@ -1022,7 +1021,7 @@ Open the Emacs configuration file.
     (interactive)
     (find-file "~/dotemacs/custom-init.org"))
 
-  (global-set-key (kbd "C-c q") 'king/open-emacs-config)
+  (keymap-global-set "C-c q" 'king/open-emacs-config)
 #+end_src
 
 Move the cursor to the first non-whitespace character of the line. If the cursor is already there, then move it to the beginning of the line.
@@ -1033,7 +1032,7 @@ Move the cursor to the first non-whitespace character of the line. If the cursor
     (if (= (point) (progn (back-to-indentation) (point)))
         (beginning-of-line)))
 
-  (global-set-key (kbd "C-a") 'king/smarter-beginning-of-line)
+  (keymap-global-set "C-a" 'king/smarter-beginning-of-line)
 #+end_src
 
 Create a new line above or below the current one.
@@ -1051,8 +1050,8 @@ Create a new line above or below the current one.
     (end-of-line)
     (newline-and-indent))
 
-  (global-set-key (kbd "<C-S-return>") 'king/create-line-above)
-  (global-set-key (kbd "<S-return>")   'king/create-line-below)
+  (keymap-global-set "C-S-<return>" 'king/create-line-above)
+  (keymap-global-set "S-<return>"   'king/create-line-below)
 #+end_src
 
 When splitting a window, switch to the new window.
@@ -1070,8 +1069,8 @@ When splitting a window, switch to the new window.
     (balance-windows)
     (other-window 1))
 
-  (global-set-key (kbd "C-x 2") 'king/split-window-below-and-switch)
-  (global-set-key (kbd "C-x 3") 'king/split-window-right-and-switch)
+  (keymap-global-set "C-x 2" 'king/split-window-below-and-switch)
+  (keymap-global-set "C-x 3" 'king/split-window-right-and-switch)
 #+end_src
 
 Mark deleted e-mail messages as read.
