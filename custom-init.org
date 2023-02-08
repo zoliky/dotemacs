@@ -942,14 +942,11 @@ Dependencies:
     (defalias 'elfeed-toggle-starred
       (elfeed-expose #'elfeed-search-toggle-all 'starred))
     ;; Custom tag faces
-    (defface elfeed-search-starred-title-face
-      '((t :foreground "#d3869b")) "Highlight starred feeds")
+    (defface elfeed-search-starred-title-face nil "Starred feeds")
     (push '(starred elfeed-search-starred-title-face) elfeed-search-face-alist)
-    (defface elfeed-search-podcast-title-face
-      '((t :foreground "#689d6a")) "Highlight podcast entries")
+    (defface elfeed-search-podcast-title-face nil "Podcast entries")
     (push '(podcast elfeed-search-podcast-title-face) elfeed-search-face-alist)
-    (defface elfeed-search-youtube-title-face
-      '((t :foreground "#fabd2f")) "Highlight youtube entries")
+    (defface elfeed-search-youtube-title-face nil "YouTube entries")
     (push '(youtube elfeed-search-youtube-title-face) elfeed-search-face-alist))
 
   (use-package elfeed-org
@@ -1234,22 +1231,11 @@ Org mode is a a to-do, agenda, project planner, literate programming, note-takin
   (use-package org-faces
     :ensure nil
     :custom-face
+    (org-todo  ((nil (:weight bold))))
+    (org-done  ((nil (:weight bold))))
     (org-table ((nil (:inherit fixed-pitch))))
     (org-block ((nil (:inherit fixed-pitch :foreground nil))))
-    (org-code  ((nil (:inherit (shadow fixed-pitch)))))
-    :custom
-    (org-todo-keyword-faces
-     '(("TODO"      . (:foreground "red2"         :weight bold))
-       ("STARTED"   . (:foreground "darkcyan"     :weight bold))
-       ("WAITING"   . (:foreground "slateblue"    :weight bold))
-       ("NEXT"      . (:foreground "violetred"    :weight bold))
-       ("POSTPONED" . (:foreground "darkorchid"   :weight bold))
-       ("SOMEDAY"   . (:foreground "chocolate"    :weight bold))
-       ("PROJECT"   . (:foreground "royalblue"    :weight bold))
-       ("LEARN"     . (:foreground "deepskyblue3" :weight bold))
-       ("REVIEW"    . (:foreground "coral3"       :weight bold))
-       ("DONE"      . (:foreground "limegreen"    :weight bold))
-       ("CANCELLED" . (:foreground "slategray"    :weight bold)))))
+    (org-code  ((nil (:inherit (shadow fixed-pitch))))))
 
   ;; Replace list hyphens with bullets
   (font-lock-add-keywords
