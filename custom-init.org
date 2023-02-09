@@ -234,8 +234,9 @@ Enable automatic spell checking and offer suggestions for misspelled words.
 
 #+begin_src emacs-lisp
   (use-package ef-themes
-    :config
-    (load-theme 'ef-summer t))
+    :init
+    (load-theme 'ef-summer t)
+    :bind ("<f9>" . ef-themes-select))
 #+end_src
 
 *** Gruvbox
