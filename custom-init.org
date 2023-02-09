@@ -1100,6 +1100,60 @@ Resize large images in e-mail messages to fit the window.
           (insert-image img)))))
 #+end_src
 
+Use colors from the active theme palette.
+
+#+begin_src emacs-lisp
+  (defun king/colors-active-theme ()
+    (let ((next      "violetred")
+          (repeat    "violetred")
+          (waiting   "slateblue")
+          (postponed "chocolate")
+          (someday   "chocolate")
+          (delegated "slateblue")
+          (project   "royalblue")
+          (failed    "slategray")
+          (cancelled "slategray")
+          (starred   "violetred")
+          (podcast   "darkcyan")
+          (youtube   "chocolate"))
+      (when (and (featurep 'ef-themes) (ef-themes--list-enabled-themes))
+        (ef-themes-with-colors
+          (setq next      magenta-warmer
+                repeat    magenta-warmer
+                waiting   magenta-cooler
+                postponed yellow-warmer
+                someday   yellow-warmer
+                delegated magenta-cooler
+                project   blue
+                failed    fg-dim
+                cancelled fg-dim
+                starred   magenta-warmer
+                podcast   cyan-cooler
+                youtube   yellow-warmer)))
+      (setq org-todo-keyword-faces
+            `(("NEXT"      . (:foreground ,next      :weight bold))
+              ("REPEAT"    . (:foreground ,repeat    :weight bold))
+              ("WAITING"   . (:foreground ,waiting   :weight bold))
+              ("POSTPONED" . (:foreground ,postponed :weight bold))
+              ("SOMEDAY"   . (:foreground ,someday   :weight bold))
+              ("DELEGATED" . (:foreground ,delegated :weight bold))
+              ("PROJECT"   . (:foreground ,project   :weight bold))
+              ("FAILED"    . (:foreground ,failed    :weight bold))
+              ("CANCELLED" . (:foreground ,cancelled :weight bold))))
+
+      ;; Elfeed
+      (set-face-attribute 'elfeed-search-starred-title-face nil :foreground starred)
+      (set-face-attribute 'elfeed-search-podcast-title-face nil :foreground podcast)
+      (set-face-attribute 'elfeed-search-youtube-title-face nil :foreground youtube)
+
+      ;; Restart Org mode
+      (when (derived-mode-p 'org-mode)
+        (org-mode-restart))))
+
+  (king/colors-active-theme)
+  (add-hook 'ef-themes-post-load-hook 'king/colors-active-theme)
+#+end_src
+
 * Custom input methods
 
 Input methods provide convenient ways of entering non-ASCII characters from the keyboard.
