@@ -785,7 +785,9 @@ Dependencies:
     (mu4e-headers-fields `((:human-date . 12)
                            (:flags      .  6)
                            (:from       . 22)
-                           (:subject    . ,(- (window-body-width) 50)))))
+                           (:subject    . ,(- (window-body-width) 50))))
+    :config
+    (setq mu4e-headers-attach-mark '("a" . "📎")))
 
   (use-package message
     :ensure nil
