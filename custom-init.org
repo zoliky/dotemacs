@@ -1014,16 +1014,6 @@ Dependencies:
 
 * Custom functions
 
-Open the Emacs configuration file.
-
-#+begin_src emacs-lisp
-  (defun king/open-emacs-config ()
-    (interactive)
-    (find-file "~/dotemacs/custom-init.org"))
-
-  (keymap-global-set "C-c q" 'king/open-emacs-config)
-#+end_src
-
 Move the cursor to the first non-whitespace character of the line. If the cursor is already there, then move it to the beginning of the line.
 
 #+begin_src emacs-lisp
@@ -1033,25 +1023,6 @@ Move the cursor to the first non-whitespace character of the line. If the cursor
         (beginning-of-line)))
 
   (keymap-global-set "C-a" 'king/smarter-beginning-of-line)
-#+end_src
-
-Create a new line above or below the current one.
-
-#+begin_src emacs-lisp
-  (defun king/create-line-above ()
-    (interactive)
-    (beginning-of-line)
-    (newline)
-    (previous-line)
-    (indent-for-tab-command))
-
-  (defun king/create-line-below ()
-    (interactive)
-    (end-of-line)
-    (newline-and-indent))
-
-  (keymap-global-set "C-S-<return>" 'king/create-line-above)
-  (keymap-global-set "S-<return>"   'king/create-line-below)
 #+end_src
 
 When splitting a window, switch to the new window.
