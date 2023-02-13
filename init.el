@@ -10,8 +10,10 @@
 
 ;;; Code:
 
-;; Changing the default Garbage Collector settings is not recommended
-;; https://lists.gnu.org/archive/html/help-gnu-emacs/2007-06/msg00243.html
+;; Check to see if the minimum version requirement of Emacs is met
+(let ((minver "28.2"))
+  (when (version< emacs-version minver)
+    (error "This configuration requires Emacs %s or higher." minver)))
 
 ;; Load the Emacs Lisp code blocks embedded in the literate Org file
 (org-babel-load-file (expand-file-name "~/.emacs.d/custom-init.org"))
