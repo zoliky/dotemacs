@@ -28,7 +28,6 @@ Emacs is an extensible computing environment that I use mainly for its text edit
     - [[#doom-modeline][Doom modeline]]
     - [[#duplicate-thing][Duplicate thing]]
     - [[#editorconfig][Editorconfig]]
-    - [[#emmet][Emmet]]
     - [[#exec-path][Exec path]]
     - [[#expand-region][Expand region]]
     - [[#helpful][Helpful]]
@@ -370,15 +369,6 @@ EditorConfig helps developers define consistent coding styles across various edi
     :defer t
     :init
     (editorconfig-mode))
-#+end_src
-
-*** Emmet
-
-Emmet is a web-developer's toolkit.
-
-#+begin_src emacs-lisp
-  (use-package emmet-mode
-    :hook ((web-mode css-mode) . emmet-mode))
 #+end_src
 
 *** Exec path
