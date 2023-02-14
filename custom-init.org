@@ -48,8 +48,6 @@ Emacs is an extensible computing environment that I use mainly for its text edit
     - [[#web-mode][Web mode]]
     - [[#which-key][Which key]]
   - [[#languages][Languages]]
-    - [[#golang][Golang]]
-    - [[#haskell][Haskell]]
     - [[#html][HTML]]
     - [[#javascript][JavaScript]]
     - [[#json][JSON]]
@@ -641,24 +639,6 @@ An Emacs package that displays available keybindings in a panel. For example, if
 #+end_src
 
 ** Languages
-*** Golang
-
-Major mode for editing Go files.
-
-#+begin_src emacs-lisp
-  (use-package go-mode
-    :mode "\\.go\\'")
-#+end_src
-
-*** Haskell
-
-Major mode for editing Haskell files.
-
-#+begin_src emacs-lisp
-  (use-package haskell-mode
-    :mode "\\.hs\\'")
-#+end_src
-
 *** HTML
 
 Automatically rename paired HTML/XML tag.
