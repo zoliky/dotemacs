@@ -1177,9 +1177,7 @@ Org mode is a a to-do, agenda, project planner, literate programming, note-takin
                         (variable-pitch-mode -1)
                         (display-line-numbers-mode -1)
                         (set-input-method "custom-input-method")))
-    :bind (("C-c l" . org-store-link)
-           ("C-c a" . org-agenda)
-           ("C-c c" . org-capture))
+    :bind ("C-c l" . org-store-link)
     :custom
     (org-ellipsis " ▾")
     (org-tags-column 0)
@@ -1248,6 +1246,7 @@ Org mode is a a to-do, agenda, project planner, literate programming, note-takin
 #+begin_src emacs-lisp
   (use-package org-agenda
     :ensure nil
+    :bind ("C-c a" . org-agenda)
     :custom
     (org-agenda-files
      (seq-filter #'file-exists-p
@@ -1343,6 +1342,7 @@ Templates to quickly record tasks, notes, and other semi-structured information.
   (use-package org-capture
     :ensure nil
     :after org
+    :bind ("C-c c" . org-capture)
     :preface
     (defvar king/org-contacts-template
       (concat "* %?\n"
