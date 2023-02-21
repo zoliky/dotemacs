@@ -1344,7 +1344,12 @@ Templates to quickly record tasks, notes, and other semi-structured information.
     :after org
     :bind ("C-c c" . org-capture)
     :preface
-    (defvar king/org-contacts-template
+    (defvar king/capture-template-bookmark
+      (concat "* [[%^{Link}][%^{Description}]]\n"
+              ":PROPERTIES:\n"
+              ":Created: %U\n"
+              ":END:\n") "Bookmark")
+    (defvar king/capture-template-contact
       (concat "* %?\n"
               ":PROPERTIES:\n"
               ":Created: %U\n"
@@ -1359,29 +1364,29 @@ Templates to quickly record tasks, notes, and other semi-structured information.
               ":PostalCode:\n"
               ":Website:\n"
               ":Note:\n"
-              ":END:\n") "Template for a contact")
+              ":END:\n") "Contact")
     :custom
     (org-capture-templates
      `(
-       ;; Bookmarks
+       ;; Bookmark
        ("b" "Bookmark"
-        entry (file+headline ,(concat org-directory "/refile.org") "Bookmarks")
-        "* %?\n:PROPERTIES:\n:Created: %U\n:END:\n")
+        entry (file+headline ,(concat org-directory "/refile.org") "Bookmarks"),
+        king/capture-template-bookmark)
 
-       ;; Contacts
+       ;; Contact
        ("c" "Contact"
         entry (file+headline ,(concat org-directory "/refile.org") "Contacts"),
-        king/org-contacts-template)
+        king/capture-template-contact)
 
-       ;; Notes
+       ;; Note
        ("n" "Note"
         entry (file+headline ,(concat org-directory "/refile.org") "Notes")
         "* %?\n:PROPERTIES:\n:Created: %U\n:END:\n")
 
-       ;; Tasks
+       ;; Task
        ("t" "Task"
         entry (file+headline ,(concat org-directory "/refile.org") "Tasks")
-        "* TODO %?\n:PROPERTIES:\n:Created: %U\n:END:\n"))))
+        "* %?\n:PROPERTIES:\n:Created: %U\n:END:\n"))))
 #+end_src
 
 ** Contacts
