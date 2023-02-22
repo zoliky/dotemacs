@@ -36,7 +36,6 @@ Emacs is an extensible computing environment that I use mainly for its text edit
     - [[#indent-guides][Indent guides]]
     - [[#magit][Magit]]
     - [[#move-text][Move text]]
-    - [[#nov][Nov]]
     - [[#olivetti][Olivetti]]
     - [[#projectile][Projectile]]
     - [[#rainbow-delimiters][Rainbow delimiters]]
@@ -470,24 +469,6 @@ A package to move current line or region.
     (move-text-default-bindings))
 #+end_src
 
-*** Nov
-
-A feature-rich EPUB reading mode for Emacs.
-
-#+begin_src emacs-lisp
-  (use-package nov
-    :mode ("\\.epub\\'" . nov-mode)
-    :preface
-    (defun king/nov-font-setup ()
-      (face-remap-add-relative 'variable-pitch
-                               :family "ChareInk"
-                               :height 210)
-      (setq line-spacing 0.15))
-    :hook (nov-mode . king/nov-font-setup)
-    :custom
-    (nov-text-width t))
-#+end_src
-
 *** Olivetti
 
 Olivetti is a package designed to create a distraction-free writing environment.
@@ -495,7 +476,6 @@ Olivetti is a package designed to create a distraction-free writing environment.
 #+begin_src emacs-lisp
   (use-package olivetti
     :hook ((org-mode          . olivetti-mode)
-           (nov-mode          . olivetti-mode)
            (markdown-mode     . olivetti-mode)
            (mu4e-view-mode    . olivetti-mode)
            (elfeed-show-mode  . olivetti-mode)
