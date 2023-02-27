@@ -39,7 +39,6 @@ Emacs is an extensible computing environment that I use mainly for its text edit
     - [[#olivetti][Olivetti]]
     - [[#projectile][Projectile]]
     - [[#rainbow-delimiters][Rainbow delimiters]]
-    - [[#rainbow-mode][Rainbow mode]]
     - [[#super-save][Super save]]
     - [[#try][Try]]
     - [[#vertico][Vertico]]
@@ -502,15 +501,6 @@ Rainbow delimiters highlights delimiters such as parentheses, brackets or braces
 #+begin_src emacs-lisp
   (use-package rainbow-delimiters
     :hook (prog-mode . rainbow-delimiters-mode))
-#+end_src
-
-*** Rainbow mode
-
-Rainbow mode colorizes strings that represent color names or hex color values.
-
-#+begin_src emacs-lisp
-  (use-package rainbow-mode
-    :hook (prog-mode . rainbow-mode))
 #+end_src
 
 *** Super save
