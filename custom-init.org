@@ -39,7 +39,6 @@ Emacs is an extensible computing environment that I use mainly for its text edit
     - [[#olivetti][Olivetti]]
     - [[#projectile][Projectile]]
     - [[#rainbow-delimiters][Rainbow delimiters]]
-    - [[#super-save][Super save]]
     - [[#try][Try]]
     - [[#vertico][Vertico]]
     - [[#web-mode][Web mode]]
@@ -502,21 +501,6 @@ Rainbow delimiters highlights delimiters such as parentheses, brackets or braces
 #+begin_src emacs-lisp
   (use-package rainbow-delimiters
     :hook (prog-mode . rainbow-delimiters-mode))
-#+end_src
-
-*** Super save
-
-Super save automatically saves buffers when switching to a different application.
-
-#+begin_src emacs-lisp
-  (use-package super-save
-    :defer t
-    :init
-    (super-save-mode)
-    :custom
-    (super-save-exclude '("private.org"))
-    ;; Disable auto-saving for remote files
-    (super-save-remote-files nil))
 #+end_src
 
 *** Try
