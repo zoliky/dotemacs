@@ -118,6 +118,7 @@ Override some of the defaults.
    vc-follow-symlinks t                 ; Follow symlinks without requesting confirmation
    major-mode 'text-mode                ; Set the default major mode to text-mode
    ring-bell-function 'ignore           ; Disable the error beep sound
+   cursor-in-non-selected-windows nil   ; Hide the cursor in non-selected windows
    inhibit-compacting-font-caches nil)  ; Prevent compacting font caches during garbage collection
   (savehist-mode t)                     ; Save the minibuffer history
   (show-paren-mode t)                   ; Enable visualization of matching parens
