@@ -70,7 +70,6 @@ Emacs is an extensible computing environment that I use mainly for its text edit
   - [[#crypt][Crypt]]
   - [[#denote][Denote]]
   - [[#export][Export]]
-  - [[#ql][QL]]
   - [[#toc][Toc]]
 
 * Package management
@@ -1413,15 +1412,6 @@ Dependencies:
        ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
        ("\\paragraph{%s}"     . "\\paragraph*{%s}")
        ("\\subparagraph{%s}"  . "\\subparagraph*{%s}"))))
-#+end_src
-
-** QL
-
-A library for searching Org entries with a query language based on S (Lisp) expressions.
-
-#+begin_src emacs-lisp
-  (use-package org-ql
-    :defer t)
 #+end_src
 
 ** Toc
