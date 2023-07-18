@@ -1240,9 +1240,10 @@ A package to toggle visibility of hidden Org elements.
 Prettify Org headings by replacing leading stars with UTF-8 bullets.
 
 #+begin_src emacs-lisp
-  (use-package org-bullets
-    :after org
-    :hook (org-mode . org-bullets-mode))
+  (use-package org-superstar
+    :hook (org-mode . org-superstar-mode)
+    :config
+    (org-superstar-configure-like-org-bullets))
 #+end_src
 
 ** Calendar
