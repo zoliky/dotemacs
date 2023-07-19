@@ -271,7 +271,7 @@ Corfu is a completion UI for Emacs.
     (corfu-auto-prefix 1)
     (corfu-auto-delay 0.1)
     (corfu-quit-no-match 'separator)
-    (corfu-excluded-modes '(org-mode mu4e-compose-mode)))
+    (corfu-exclude-modes '(org-mode mu4e-compose-mode)))
 
   (use-package cape
     :init
