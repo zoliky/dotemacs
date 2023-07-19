@@ -28,6 +28,7 @@
 (setq byte-compile-warnings '(cl-functions))
 
 ;; Suppress warnings and errors during asynchronous native compilation
-(setq native-comp-async-report-warnings-errors nil)
+(when (native-comp-available-p)
+  (setq native-comp-async-report-warnings-errors nil))
 
 ;;; early-init.el ends here
