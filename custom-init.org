@@ -37,7 +37,6 @@ Emacs is an extensible computing environment that I use mainly for its text edit
     - [[#magit][Magit]]
     - [[#move-text][Move text]]
     - [[#olivetti][Olivetti]]
-    - [[#projectile][Projectile]]
     - [[#rainbow-delimiters][Rainbow delimiters]]
     - [[#try][Try]]
     - [[#vertico][Vertico]]
@@ -411,12 +410,6 @@ Ibuffer is a built-in replacement for ~list-buffers~.
     :ensure nil
     :bind ("C-x C-b" . ibuffer))
 
-  (use-package ibuffer-projectile
-    :hook (ibuffer . (lambda ()
-                       (ibuffer-projectile-set-filter-groups)
-                       (unless (eq ibuffer-sorting-mode 'alphabetic)
-                         (ibuffer-do-sort-by-alphabetic)))))
-
   (use-package all-the-icons-ibuffer
     :after (all-the-icons ibuffer)
     :hook (ibuffer-mode . all-the-icons-ibuffer-mode))
@@ -480,17 +473,6 @@ Olivetti is a package designed to create a distraction-free writing environment.
            (mu4e-compose-mode . olivetti-mode))
     :custom
     (olivetti-body-width 80))
-#+end_src
-
-*** Projectile
-
-Projectile is a project interaction library for Emacs.
-
-#+begin_src emacs-lisp
-  (use-package projectile
-    :init
-    (projectile-mode)
-    :bind ("C-c p" . projectile-command-map))
 #+end_src
 
 *** Rainbow delimiters
