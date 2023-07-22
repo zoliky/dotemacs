@@ -296,7 +296,8 @@ Dashboard is an extensible Emacs startup screen.
     (dashboard-center-content t)
     (dashboard-set-file-icons t)
     (dashboard-set-heading-icons t)
-    (dashboard-startup-banner 'logo))
+    (dashboard-startup-banner 'logo)
+    (dashboard-projects-backend 'project-el))
 #+end_src
 
 *** Dired
