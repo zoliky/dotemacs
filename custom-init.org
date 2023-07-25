@@ -142,6 +142,7 @@ File-related customizations.
     (kept-old-versions 2)               ; Number of oldest versions to keep when a new backup is made
     (version-control t)                 ; Make numeric backup versions unconditionally
     (auto-save-default nil)             ; Stop creating #autosave# files
+    (delete-by-moving-to-trash t)       ; Move deleted files to the trash
     (mode-require-final-newline nil)    ; Don't add newlines at the end of files
     (large-file-warning-threshold nil)) ; Open large files without requesting confirmation
 #+end_src
