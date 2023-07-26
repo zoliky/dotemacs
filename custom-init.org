@@ -326,6 +326,13 @@ Dired provides a convenient way to manage files and directories inside Emacs.
                 ("<backtab>" . dired-subtree-cycle)
                 ("<tab>"     . dired-subtree-toggle)))
 
+  (use-package dired-hide-dotfiles
+    :hook (dired-mode . dired-hide-dotfiles-mode)
+    :bind (:map dired-mode-map
+                ("." . dired-hide-dotfiles-mode))
+    :custom
+    (dired-hide-dotfiles-verbose nil))
+
   (use-package all-the-icons-dired
     :after all-the-icons)
 #+end_src
