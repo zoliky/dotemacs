@@ -313,6 +313,8 @@ Dired provides a convenient way to manage files and directories inside Emacs.
     :hook (dired-mode . all-the-icons-dired-mode)
     :custom
     (dired-auto-revert-buffer t)
+    (dired-recursive-copies 'always)
+    (dired-recursive-deletes 'always)
     (dired-listing-switches "-agho --group-directories-first"))
 
   (use-package dired-narrow
