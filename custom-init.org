@@ -81,7 +81,6 @@ Initialize the package system.
   (setq package-archive-priorities '(("melpa"  . 100)
                                      ("gnu"    .  50)
                                      ("nongnu" .  25)))
-  (package-initialize)
 #+end_src
 
 Ensure that ~use-package~ is installed.
