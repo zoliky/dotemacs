@@ -776,13 +776,6 @@ Dependencies:
                         (:maildir "/gmail-zolikydev/[Gmail].Sent Mail" :key ?s)
                         (:maildir "/gmail-zolikydev/[Gmail].Drafts"    :key ?d)
                         (:maildir "/gmail-zolikydev/[Gmail].Trash"     :key ?t))))))))
-
-  ;; Load mu4e in the background when Emacs starts
-  (run-at-time
-   "10 sec" nil (lambda ()
-                  (let ((current-prefix-arg '(4)))
-                    (call-interactively 'mu4e)
-                    (message nil))))
 #+end_src
 
 *** Mu4e alert
