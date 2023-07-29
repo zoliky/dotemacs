@@ -23,9 +23,6 @@
 ;; Remove host name from titlebar information
 (setq frame-title-format '(multiple-frames "%b" ("" "%b - GNU Emacs")))
 
-;; Avoid loading the packages again after processing the init file
-(setq package-enable-at-startup nil)
-
 ;; Turn off mouse interface early in startup to avoid momentary display
 (push '(menu-bar-lines . 0)   default-frame-alist)
 (push '(tool-bar-lines . 0)   default-frame-alist)
