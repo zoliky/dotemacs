@@ -1365,8 +1365,8 @@ A simple note-taking tool, based on the idea that notes should follow a predicta
     :hook (dired-mode . denote-dired-mode)
     :custom
     (denote-sort-keywords t)
-    (denote-allow-multi-word-keywords nil)
-    (denote-directory (concat org-directory "/")))
+    (denote-directory "~/notes/")
+    (denote-allow-multi-word-keywords nil))
 #+end_src
 
 ** Export
