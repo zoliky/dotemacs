@@ -265,6 +265,13 @@ Consult enhances the built-in completion and search features of Emacs.
   (use-package consult
     :bind (("C-s"   . consult-line)
            ("C-x b" . consult-buffer)))
+
+  (use-package consult-notes
+    :bind ("<f5>" . consult-notes)
+    :custom
+    (consult-notes-denote-files-function (function denote-directory-text-only-files))
+    :config
+    (consult-notes-denote-mode))
 #+end_src
 
 *** Corfu
