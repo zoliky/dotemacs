@@ -22,6 +22,7 @@ Emacs is an extensible computing environment that I use mainly for its text edit
     - [[#modus][Modus]]
   - [[#general-enhancements][General enhancements]]
     - [[#avy][Avy]]
+    - [[#consult][Consult]]
     - [[#corfu][Corfu]]
     - [[#dashboard][Dashboard]]
     - [[#dired][Dired]]
@@ -254,6 +255,16 @@ Avy provides an interface to quickly jump to any visible position in a buffer.
 #+begin_src emacs-lisp
   (use-package avy
     :bind ("M-s" . avy-goto-char))
+#+end_src
+
+*** Consult
+
+Consult enhances the built-in completion and search features of Emacs.
+
+#+begin_src emacs-lisp
+  (use-package consult
+    :bind (("C-s"   . consult-line)
+           ("C-x b" . consult-buffer)))
 #+end_src
 
 *** Corfu
@@ -538,10 +549,6 @@ Vertico helps to rapidly complete file names, buffer names, or any other Emacs i
     :after (all-the-icons marginalia)
     :init
     (all-the-icons-completion-mode))
-
-  (use-package consult
-    :bind (("C-s"   . consult-line)
-           ("C-x b" . consult-buffer)))
 #+end_src
 
 *** Web mode
