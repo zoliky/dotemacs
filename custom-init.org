@@ -915,9 +915,10 @@ Dependencies:
 * Custom key bindings
 
 #+begin_src emacs-lisp
-  (keymap-global-unset "C-z")               ; Disable C-z
-  (keymap-global-set "M-o" 'other-window)   ; Bind M-o to other-window
-  (keymap-global-set "M-z" 'zap-up-to-char) ; Bind M-z to zap-up-to-char instead of zap-to-char
+  (keymap-global-unset "C-z")                 ; Disable C-z
+  (keymap-global-set "M-o" 'other-window)     ; Bind M-o to other-window
+  (keymap-global-set "M-z" 'zap-up-to-char)   ; Bind M-z to zap-up-to-char
+  (keymap-global-set "C-S-d" 'duplicate-line) ; Bind C-S-d to duplicate-line
 #+end_src
 
 * Custom functions
