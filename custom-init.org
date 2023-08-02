@@ -27,7 +27,6 @@ Emacs is an extensible computing environment that I use mainly for its text edit
     - [[#dashboard][Dashboard]]
     - [[#dired][Dired]]
     - [[#doom-modeline][Doom modeline]]
-    - [[#duplicate-thing][Duplicate thing]]
     - [[#editorconfig][Editorconfig]]
     - [[#exec-path][Exec path]]
     - [[#expand-region][Expand region]]
@@ -368,20 +367,6 @@ Doom modeline is a modeline for GNU Emacs inspired by the Doom theme collection.
     :custom
     (doom-modeline-mu4e t)
     (doom-modeline-height 38))
-#+end_src
-
-*** Duplicate thing
-
-A package to duplicate current line and selection.
-
-#+begin_src emacs-lisp
-  (use-package duplicate-thing
-    :preface
-    (defun king/duplicate-thing-custom ()
-      (interactive)
-      (save-mark-and-excursion (duplicate-thing 1))
-      (next-line))
-    :bind ("C-S-d" . king/duplicate-thing-custom))
 #+end_src
 
 *** Editorconfig
