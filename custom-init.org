@@ -1170,7 +1170,7 @@ Org mode is a a to-do, agenda, project planner, literate programming, note-takin
     (org-todo  ((nil (:weight bold))))
     (org-done  ((nil (:weight bold))))
     (org-table ((nil (:inherit fixed-pitch))))
-    (org-block ((nil (:inherit fixed-pitch :foreground nil))))
+    (org-block ((nil (:inherit fixed-pitch))))
     (org-code  ((nil (:inherit (shadow fixed-pitch))))))
 
   ;; Replace list hyphens with bullets
