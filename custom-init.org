@@ -133,7 +133,7 @@ File-related customizations.
   (use-package files
     :ensure nil
     :custom
-    (backup-directory-alist '(("." . "~/.emacs.d/backups")))
+    (backup-directory-alist `(("." . ,(concat user-emacs-directory "backup"))))
     (backup-by-copying t)               ; Always use copying to create backup files
     (delete-old-versions t)             ; Delete excess backup versions
     (kept-new-versions 6)               ; Number of newest versions to keep when a new backup is made
