@@ -29,7 +29,6 @@ Emacs is an extensible computing environment that I use mainly for its text edit
     - [[#doom-modeline][Doom modeline]]
     - [[#editorconfig][Editorconfig]]
     - [[#exec-path][Exec path]]
-    - [[#expand-region][Expand region]]
     - [[#helpful][Helpful]]
     - [[#ibuffer][Ibuffer]]
     - [[#icons][Icons]]
@@ -390,15 +389,6 @@ Exec path helps ensure that environment variables inside Emacs look the same as 
     (setq exec-path-from-shell-arguments nil)
     :config
     (exec-path-from-shell-initialize))
-#+end_src
-
-*** Expand region
-
-Expand region expands the selected region by semantic units.
-
-#+begin_src emacs-lisp
-  (use-package expand-region
-    :bind ("C-=" . er/expand-region))
 #+end_src
 
 *** Helpful
