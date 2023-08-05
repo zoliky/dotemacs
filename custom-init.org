@@ -43,8 +43,6 @@ Emacs is an extensible computing environment that I use mainly for its text edit
     - [[#which-key][Which key]]
   - [[#languages][Languages]]
     - [[#html][HTML]]
-    - [[#javascript][JavaScript]]
-    - [[#json][JSON]]
     - [[#lua][Lua]]
     - [[#markdown][Markdown]]
     - [[#toml][TOML]]
@@ -571,29 +569,6 @@ Automatically rename paired HTML/XML tag.
 #+begin_src emacs-lisp
   (use-package auto-rename-tag
     :hook (web-mode . auto-rename-tag-mode))
-#+end_src
-
-*** JavaScript
-
-Improved JavaScript editing mode.
-
-#+begin_src emacs-lisp
-  (use-package js2-mode
-    :mode "\\.jsx?\\'")
-#+end_src
-
-*** JSON
-
-Major mode for editing JSON files.
-
-#+begin_src emacs-lisp
-  (use-package json-mode
-    :mode "\\.json\\'"
-    :preface
-    (defun king/json-mode-before-save-hook ()
-      (when (eq major-mode 'json-mode)
-        (json-pretty-print-buffer)))
-    :hook (before-save . king/json-mode-before-save-hook))
 #+end_src
 
 *** Lua
