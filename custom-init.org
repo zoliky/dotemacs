@@ -299,8 +299,6 @@ Dashboard is an extensible Emacs startup screen.
 #+begin_src emacs-lisp
   (use-package dashboard
     :after all-the-icons
-    :config
-    (dashboard-setup-startup-hook)
     :custom
     (dashboard-items '((recents  .  5)
                        (projects .  5)
@@ -311,7 +309,12 @@ Dashboard is an extensible Emacs startup screen.
     (dashboard-set-file-icons t)
     (dashboard-set-heading-icons t)
     (dashboard-startup-banner 'logo)
-    (dashboard-projects-backend 'project-el))
+    (dashboard-projects-backend 'project-el)
+    :config
+    (dashboard-setup-startup-hook)
+    (setq initial-buffer-choice (lambda ()
+                                  (get-buffer-create "*dashboard*")
+                                  (dashboard-refresh-buffer))))
 #+end_src
 
 *** Dired
