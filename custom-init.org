@@ -298,7 +298,7 @@ Dashboard is an extensible Emacs startup screen.
 
 #+begin_src emacs-lisp
   (use-package dashboard
-    :after all-the-icons
+    :after nerd-icons
     :custom
     (dashboard-items '((recents  .  5)
                        (projects .  5)
@@ -324,9 +324,9 @@ Dired provides a convenient way to manage files and directories inside Emacs.
 #+begin_src emacs-lisp
   (use-package dired
     :ensure nil
-    :after all-the-icons-dired
+    :after nerd-icons-dired
     :bind ("C-x C-j"  . dired-jump)
-    :hook (dired-mode . all-the-icons-dired-mode)
+    :hook (dired-mode . nerd-icons-dired-mode)
     :custom
     (dired-auto-revert-buffer t)
     (dired-recursive-copies 'always)
@@ -351,8 +351,8 @@ Dired provides a convenient way to manage files and directories inside Emacs.
     :custom
     (dired-hide-dotfiles-verbose nil))
 
-  (use-package all-the-icons-dired
-    :after all-the-icons)
+  (use-package nerd-icons-dired
+    :after nerd-icons)
 #+end_src
 
 *** Doom modeline
@@ -361,7 +361,7 @@ Doom modeline is a modeline for GNU Emacs inspired by the Doom theme collection.
 
 #+begin_src emacs-lisp
   (use-package doom-modeline
-    :after all-the-icons
+    :after nerd-icons
     :init
     (doom-modeline-mode)
     :custom
@@ -414,9 +414,9 @@ Ibuffer is a built-in replacement for ~list-buffers~.
     :ensure nil
     :bind ("C-x C-b" . ibuffer))
 
-  (use-package all-the-icons-ibuffer
-    :after (all-the-icons ibuffer)
-    :hook (ibuffer-mode . all-the-icons-ibuffer-mode))
+  (use-package nerd-icons-ibuffer
+    :after (nerd-icons ibuffer)
+    :hook (ibuffer-mode . nerd-icons-ibuffer-mode))
 #+end_src
 
 *** Icons
@@ -424,11 +424,7 @@ Ibuffer is a built-in replacement for ~list-buffers~.
 A library for inserting developer icons.
 
 #+begin_src emacs-lisp
-  (use-package all-the-icons
-    :config
-    (unless (find-font (font-spec :name "all-the-icons"))
-      (all-the-icons-install-fonts t))
-    (setq all-the-icons-scale-factor 1))
+  (use-package nerd-icons)
 #+end_src
 
 *** Indent guides
@@ -528,10 +524,10 @@ Vertico helps to rapidly complete file names, buffer names, or any other Emacs i
     :custom
     (marginalia-align 'right))
 
-  (use-package all-the-icons-completion
-    :after (all-the-icons marginalia)
-    :init
-    (all-the-icons-completion-mode))
+  (use-package nerd-icons-completion
+    :after nerd-icons
+    :config
+    (nerd-icons-completion-mode))
 #+end_src
 
 *** Web mode
