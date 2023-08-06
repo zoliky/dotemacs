@@ -887,6 +887,13 @@ Dependencies:
   (keymap-global-set "M-o" 'other-window)     ; Bind M-o to other-window
   (keymap-global-set "M-z" 'zap-up-to-char)   ; Bind M-z to zap-up-to-char
   (keymap-global-set "C-S-d" 'duplicate-line) ; Bind C-S-d to duplicate-line
+
+  ;; Disable secondary selection commands
+  (keymap-global-unset "M-<mouse-1>")
+  (keymap-global-unset "M-<mouse-2>")
+  (keymap-global-unset "M-<mouse-3>")
+  (keymap-global-unset "M-<drag-mouse-1>")
+  (keymap-global-unset "M-<down-mouse-1>")
 #+end_src
 
 * Custom functions
