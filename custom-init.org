@@ -326,11 +326,15 @@ Dired provides a convenient way to manage files and directories inside Emacs.
     :ensure nil
     :after nerd-icons-dired
     :bind ("C-x C-j"  . dired-jump)
-    :hook (dired-mode . nerd-icons-dired-mode)
+    :hook (dired-mode . (lambda ()
+                          (nerd-icons-dired-mode)
+                          (dired-hide-details-mode)))
     :custom
     (dired-auto-revert-buffer t)
     (dired-recursive-copies 'always)
     (dired-recursive-deletes 'always)
+    (dired-hide-details-hide-symlink-targets nil)
+    (dired-hide-details-hide-information-lines nil)
     (dired-listing-switches "-agho --group-directories-first"))
 
   (use-package dired-narrow
